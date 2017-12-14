@@ -40,7 +40,12 @@ Public Class FrmMain
     End Sub
 
     Private Sub BtnStart_Click(sender As Object, e As System.EventArgs) Handles btnStart.Click
-
+        My.Settings.AskingForInstructions = True
+        My.Settings.Save()
+        Dim oForm As frmMSGBOX
+        oForm = New frmMSGBOX()
+        oForm.ShowDialog()
+        oForm = Nothing
     End Sub
 
     Private Sub RandomNumbers_ValueChanged(sender As Object, e As System.EventArgs) Handles trkBar_Numbers.ValueChanged

@@ -61,6 +61,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Would you like to view the Instructions before Starting?.
+        '''</summary>
+        Friend ReadOnly Property MSG_AskingInstructions() As String
+            Get
+                Return ResourceManager.GetString("MSG_AskingInstructions", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
         Friend ReadOnly Property msgBox_Critical() As System.Drawing.Bitmap
@@ -93,11 +102,22 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to Based on the Settings you have chosen, a number of Slots will appear.
         '''Your Goal is Simple: Try to land a Perfect Match on all slots
-        '''a certain number of times to win!.
+        '''a certain number of times to win!
+        '''
+        '''When you are Ready, Click OK to Start with Current Settings..
         '''</summary>
         Friend ReadOnly Property MSGInstructions() As String
             Get
                 Return ResourceManager.GetString("MSGInstructions", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Slots: Ready to Begin.
+        '''</summary>
+        Friend ReadOnly Property Title_AskingInstructions() As String
+            Get
+                Return ResourceManager.GetString("Title_AskingInstructions", resourceCulture)
             End Get
         End Property
         

@@ -62,6 +62,5 @@ Public Class frmMSGBOX
     Private Sub FrmMSGBOX_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         My.Settings.ViewingInstructions = False
         My.Settings.Save()
-        Close()
     End Sub
 End Class

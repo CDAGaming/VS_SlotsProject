@@ -38,4 +38,20 @@ Public Class FrmGame_3Slots
     Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
         IsQuitting()
     End Sub
+
+    Private Sub btnRoll_Click(sender As Object, e As EventArgs) Handles btnRoll.Click
+        Dim intNum1 As Integer = randGen.Next(My.Settings.RandomNumbers)
+        Dim intNum2 As Integer = randGen.Next(My.Settings.RandomNumbers)
+        Dim intNum3 As Integer = randGen.Next(My.Settings.RandomNumbers)
+
+        lblNum1.Text = intNum1.ToString()
+        lblNum2.Text = intNum2.ToString()
+        lblNum3.Text = intNum3.ToString()
+
+        If intNum1 = intNum2 AndAlso intNum1 = intNum3 Then
+            lblNum1.BackColor = Color.Green
+            lblNum2.BackColor = Color.Green
+            lblNum3.BackColor = Color.Green
+        End If
+    End Sub
 End Class

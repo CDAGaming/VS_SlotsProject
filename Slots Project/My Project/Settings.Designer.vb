@@ -113,6 +113,30 @@ Namespace My
                 Me("ViewingInstructions_InGame") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property IsQuitting() As Boolean
+            Get
+                Return CType(Me("IsQuitting"),Boolean)
+            End Get
+            Set
+                Me("IsQuitting") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property WantsToQuit() As Boolean
+            Get
+                Return CType(Me("WantsToQuit"),Boolean)
+            End Get
+            Set
+                Me("WantsToQuit") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

@@ -26,7 +26,6 @@ Partial Class FrmGame_4Slots
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.InstructionsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.btnQuit = New System.Windows.Forms.Button()
         Me.btnRoll = New System.Windows.Forms.Button()
         Me.lblNum3 = New System.Windows.Forms.Label()
@@ -39,7 +38,7 @@ Partial Class FrmGame_4Slots
         'MenuStrip1
         '
         Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.InstructionsToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(334, 28)
@@ -56,20 +55,14 @@ Partial Class FrmGame_4Slots
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(125, 26)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
         Me.AboutToolStripMenuItem.Text = "About"
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(125, 26)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
         Me.ExitToolStripMenuItem.Text = "Exit"
-        '
-        'InstructionsToolStripMenuItem
-        '
-        Me.InstructionsToolStripMenuItem.Name = "InstructionsToolStripMenuItem"
-        Me.InstructionsToolStripMenuItem.Size = New System.Drawing.Size(96, 24)
-        Me.InstructionsToolStripMenuItem.Text = "Instructions"
         '
         'btnQuit
         '
@@ -163,7 +156,6 @@ Partial Class FrmGame_4Slots
     Friend WithEvents FileToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AboutToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents InstructionsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents btnQuit As Button
     Friend WithEvents btnRoll As Button
     Friend WithEvents lblNum3 As Label

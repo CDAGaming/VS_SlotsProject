@@ -1153,4 +1153,10 @@ When you are Ready, Click OK to Start with Current Settings.</value>
   <data name="Title_AskingInstructions" xml:space="preserve">
     <value>Slots: Ready to Begin</value>
   </data>
+  <data name="MSG_IsQuitting" xml:space="preserve">
+    <value>Are you Sure you want to quit the Game?</value>
+  </data>
+  <data name="Title_IsQuitting" xml:space="preserve">
+    <value>Slots: Quit Game?</value>
+  </data>
 </root>

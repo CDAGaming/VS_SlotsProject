@@ -26,7 +26,6 @@ Partial Class FrmGame_3Slots
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.InstructionsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.lblNum1 = New System.Windows.Forms.Label()
         Me.lblNum2 = New System.Windows.Forms.Label()
         Me.lblNum3 = New System.Windows.Forms.Label()
@@ -38,7 +37,7 @@ Partial Class FrmGame_3Slots
         'MenuStrip1
         '
         Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.InstructionsToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(334, 28)
@@ -63,12 +62,6 @@ Partial Class FrmGame_3Slots
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
         Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
         Me.ExitToolStripMenuItem.Text = "Exit"
-        '
-        'InstructionsToolStripMenuItem
-        '
-        Me.InstructionsToolStripMenuItem.Name = "InstructionsToolStripMenuItem"
-        Me.InstructionsToolStripMenuItem.Size = New System.Drawing.Size(96, 24)
-        Me.InstructionsToolStripMenuItem.Text = "Instructions"
         '
         'lblNum1
         '
@@ -150,7 +143,6 @@ Partial Class FrmGame_3Slots
     Friend WithEvents FileToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AboutToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents InstructionsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents lblNum1 As Label
     Friend WithEvents lblNum2 As Label
     Friend WithEvents lblNum3 As Label

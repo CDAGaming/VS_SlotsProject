@@ -11,4 +11,11 @@ Public Class FrmGame_3Slots
     Private Sub FrmGame_3Slots_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
+
+    Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
+        Dim oForm As FrmAbout
+        oForm = New FrmAbout()
+        oForm.Show()
+        oForm = Nothing
+    End Sub
 End Class

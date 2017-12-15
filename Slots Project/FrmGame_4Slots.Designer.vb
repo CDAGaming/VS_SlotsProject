@@ -22,6 +22,7 @@ Partial Class FrmGame_4Slots
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -32,6 +33,7 @@ Partial Class FrmGame_4Slots
         Me.lblNum2 = New System.Windows.Forms.Label()
         Me.lblNum1 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.tmr_IsQuittingcheck = New System.Windows.Forms.Timer(Me.components)
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -126,6 +128,11 @@ Partial Class FrmGame_4Slots
         Me.Label1.TabIndex = 12
         Me.Label1.Text = "0"
         '
+        'tmr_IsQuittingcheck
+        '
+        Me.tmr_IsQuittingcheck.Enabled = True
+        Me.tmr_IsQuittingcheck.Interval = 10
+        '
         'FrmGame_4Slots
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 28.0!)
@@ -162,4 +169,5 @@ Partial Class FrmGame_4Slots
     Friend WithEvents lblNum2 As Label
     Friend WithEvents lblNum1 As Label
     Friend WithEvents Label1 As Label
+    Friend WithEvents tmr_IsQuittingcheck As Timer
 End Class

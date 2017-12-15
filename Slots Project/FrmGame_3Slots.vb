@@ -8,14 +8,34 @@ Option Infer Off
 
 Public Class FrmGame_3Slots
     Dim randGen As New Random
-    Private Sub FrmGame_3Slots_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
-
     Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
         Dim oForm As FrmAbout
         oForm = New FrmAbout()
         oForm.Show()
         oForm = Nothing
+    End Sub
+
+    Private Sub tmr_IsQuittingcheck_Tick(sender As Object, e As EventArgs) Handles tmr_IsQuittingcheck.Tick
+        If My.Settings.IsQuitting Then
+            Close()
+        End If
+    End Sub
+
+    Private Sub btnQuit_Click(sender As Object, e As EventArgs) Handles btnQuit.Click
+        IsQuitting()
+    End Sub
+
+    Public Sub IsQuitting()
+        My.Settings.WantsToQuit = True
+        My.Settings.Save()
+
+        Dim oForm As frmMSGBOX
+        oForm = New frmMSGBOX()
+        oForm.Show()
+        oForm = Nothing
+    End Sub
+
+    Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
+        IsQuitting()
     End Sub
 End Class

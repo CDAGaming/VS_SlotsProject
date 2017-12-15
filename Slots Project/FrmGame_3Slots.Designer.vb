@@ -22,6 +22,7 @@ Partial Class FrmGame_3Slots
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -31,6 +32,7 @@ Partial Class FrmGame_3Slots
         Me.lblNum3 = New System.Windows.Forms.Label()
         Me.btnRoll = New System.Windows.Forms.Button()
         Me.btnQuit = New System.Windows.Forms.Button()
+        Me.tmr_IsQuittingcheck = New System.Windows.Forms.Timer(Me.components)
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -54,7 +56,7 @@ Partial Class FrmGame_3Slots
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(125, 26)
         Me.AboutToolStripMenuItem.Text = "About"
         '
         'ExitToolStripMenuItem
@@ -114,6 +116,11 @@ Partial Class FrmGame_3Slots
         Me.btnQuit.Text = "Quit"
         Me.btnQuit.UseVisualStyleBackColor = True
         '
+        'tmr_IsQuittingcheck
+        '
+        Me.tmr_IsQuittingcheck.Enabled = True
+        Me.tmr_IsQuittingcheck.Interval = 10
+        '
         'FrmGame_3Slots
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 28.0!)
@@ -148,4 +155,5 @@ Partial Class FrmGame_3Slots
     Friend WithEvents lblNum3 As Label
     Friend WithEvents btnRoll As Button
     Friend WithEvents btnQuit As Button
+    Friend WithEvents tmr_IsQuittingcheck As Timer
 End Class

@@ -8,9 +8,8 @@ Option Infer Off
 
 Public Class FrmMain
     Private Sub AboutToolStripMenuItem_Click(sender As Object, e As System.EventArgs) Handles AboutToolStripMenuItem.Click
-        Dim oForm As FrmAbout
-        oForm = New FrmAbout()
-        oForm.Show()
+        Dim oForm As FrmAbout = New FrmAbout()
+        oForm.ShowDialog()
         oForm = Nothing
     End Sub
 
@@ -21,10 +20,12 @@ Public Class FrmMain
     Private Sub InstructionsToolStripMenuItem_Click(sender As Object, e As System.EventArgs) Handles InstructionsToolStripMenuItem.Click
         My.Settings.ViewingInstructions = True
         My.Settings.Save()
-        Dim oForm As frmMSGBOX
-        oForm = New frmMSGBOX()
-        oForm.ShowDialog()
-        oForm = Nothing
+
+        Dim oForm As frmMSGBOX = New frmMSGBOX()
+        If oForm.ShowDialog = DialogResult.Cancel Then
+        Else
+            Close()
+        End If
     End Sub
 
     Private Sub FrmMain_Load(sender As Object, e As System.EventArgs) Handles MyBase.Load
@@ -42,10 +43,12 @@ Public Class FrmMain
     Private Sub BtnStart_Click(sender As Object, e As System.EventArgs) Handles btnStart.Click
         My.Settings.AskingForInstructions = True
         My.Settings.Save()
-        Dim oForm As frmMSGBOX
-        oForm = New frmMSGBOX()
-        oForm.ShowDialog()
-        oForm = Nothing
+
+        Dim oForm As frmMSGBOX = New frmMSGBOX()
+        If oForm.ShowDialog() = DialogResult.Cancel Then
+        Else
+            Close()
+        End If
     End Sub
 
     Private Sub RandomNumbers_ValueChanged(sender As Object, e As System.EventArgs) Handles trkBar_Numbers.ValueChanged

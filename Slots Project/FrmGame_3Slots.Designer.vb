@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FrmGame_3Slots
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,9 +20,8 @@ Partial Class FrmGame_3Slots
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -32,7 +31,6 @@ Partial Class FrmGame_3Slots
         Me.lblNum3 = New System.Windows.Forms.Label()
         Me.btnRoll = New System.Windows.Forms.Button()
         Me.btnQuit = New System.Windows.Forms.Button()
-        Me.tmr_IsQuittingcheck = New System.Windows.Forms.Timer(Me.components)
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -62,7 +60,7 @@ Partial Class FrmGame_3Slots
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(125, 26)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'lblNum1
@@ -116,11 +114,6 @@ Partial Class FrmGame_3Slots
         Me.btnQuit.Text = "Quit"
         Me.btnQuit.UseVisualStyleBackColor = True
         '
-        'tmr_IsQuittingcheck
-        '
-        Me.tmr_IsQuittingcheck.Enabled = True
-        Me.tmr_IsQuittingcheck.Interval = 10
-        '
         'FrmGame_3Slots
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 28.0!)
@@ -155,5 +148,4 @@ Partial Class FrmGame_3Slots
     Friend WithEvents lblNum3 As Label
     Friend WithEvents btnRoll As Button
     Friend WithEvents btnQuit As Button
-    Friend WithEvents tmr_IsQuittingcheck As Timer
 End Class

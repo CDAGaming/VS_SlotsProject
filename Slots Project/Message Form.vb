@@ -7,41 +7,58 @@ Option Strict On
 Option Infer Off
 
 Public Class frmMSGBOX
+    ' <<<< LOAD EVENTS >>>>
     Private Sub FrmMSGBOX_Load(sender As Object, e As System.EventArgs) Handles MyBase.Load
         'Choose Data & Events to Display Depending on Settings
         If My.Settings.ViewingInstructions Then
-            Text = My.Resources.TitleInstructions
-            picIcon.BackgroundImage = My.Resources.msgBox_Info
-            lblMSG.Text = My.Resources.MSGInstructions
-            btnCancel.Visible = True
-            btnOK.Visible = True
-            btnOK.Enabled = True
-            btnCancel.Enabled = True
+            Load_ViewingInstructions()
         End If
-
         If My.Settings.AskingForInstructions Then
-            Text = My.Resources.Title_AskingInstructions
-            picIcon.BackgroundImage = My.Resources.msgBox_Info
-            lblMSG.Text = My.Resources.MSG_AskingInstructions
-            btnCancel.Visible = True
-            btnYES.Visible = True
-            btnNO.Visible = True
-            btnCancel.Enabled = True
-            btnYES.Enabled = True
-            btnNO.Enabled = True
+            Load_AskingForInstructions()
         End If
-
         If My.Settings.WantsToQuit Then
-            Text = My.Resources.Title_IsQuitting
-            picIcon.BackgroundImage = My.Resources.msgBox_Warning
-            lblMSG.Text = My.Resources.MSG_IsQuitting
-            btnCancel.Visible = True
-            btnYES.Visible = True
-            btnNO.Visible = True
-            btnCancel.Enabled = True
-            btnYES.Enabled = True
-            btnNO.Enabled = True
+            Load_WantsToQuit()
         End If
+    End Sub
+
+    Public Sub Load_ViewingInstructions()
+        Text = My.Resources.TitleInstructions
+        picIcon.BackgroundImage = My.Resources.msgBox_Info
+        lblMSG.Text = My.Resources.MSGInstructions
+        btnCancel.Visible = True
+        btnCancel.Enabled = True
+        btnOK.Visible = True
+        btnOK.Enabled = True
+        AcceptButton = btnOK
+        CancelButton = btnCancel
+    End Sub
+
+    Public Sub Load_AskingForInstructions()
+        Text = My.Resources.Title_AskingInstructions
+        picIcon.BackgroundImage = My.Resources.msgBox_Info
+        lblMSG.Text = My.Resources.MSG_AskingInstructions
+        btnCancel.Visible = True
+        btnCancel.Enabled = True
+        btnYES.Visible = True
+        btnYES.Enabled = True
+        btnNO.Visible = True
+        btnNO.Enabled = True
+        AcceptButton = btnYES
+        CancelButton = btnCancel
+    End Sub
+
+    Public Sub Load_WantsToQuit()
+        Text = My.Resources.Title_IsQuitting
+        picIcon.BackgroundImage = My.Resources.msgBox_Warning
+        lblMSG.Text = My.Resources.MSG_IsQuitting
+        btnCancel.Visible = True
+        btnCancel.Enabled = True
+        btnYES.Visible = True
+        btnYES.Enabled = True
+        btnNO.Visible = True
+        btnNO.Enabled = True
+        AcceptButton = btnYES
+        CancelButton = btnCancel
     End Sub
     ' <<<<============= Button MAIN Events =============>>>>
     Private Sub BtnOK_Click(sender As Object, e As System.EventArgs) Handles btnOK.Click
@@ -85,15 +102,13 @@ Public Class frmMSGBOX
         'Launch Game Form Based on Slots
         Select Case My.Settings.Slots
             Case 3
-                Dim oForm As FrmGame_3Slots
-                oForm = New FrmGame_3Slots()
-                oForm.ShowDialog()
-                oForm = Nothing
+                Dim oForm_3Game As FrmGame_3Slots = New FrmGame_3Slots()
+                oForm_3Game.Show()
+                Close()
             Case 4
-                Dim oForm As FrmGame_4Slots
-                oForm = New FrmGame_4Slots()
-                oForm.ShowDialog()
-                oForm = Nothing
+                Dim oForm_4Game As FrmGame_4Slots = New FrmGame_4Slots()
+                oForm_4Game.Show()
+                Close()
             Case 5
                 'Launch frmGame_5Slots
             Case 6
@@ -106,25 +121,25 @@ Public Class frmMSGBOX
         End Select
         My.Settings.ViewingInstructions = False
         My.Settings.Save()
-        Close()
+        DialogResult = DialogResult.OK
     End Sub
     ' <<<<============= BtnCancel Events =============>>>>
     Public Sub BtnCancel_ViewingInstructions()
         My.Settings.ViewingInstructions = False
         My.Settings.Save()
-        Close()
+        DialogResult = DialogResult.Cancel
     End Sub
 
     Public Sub BtnCancel_AskingForInstructions()
         My.Settings.AskingForInstructions = False
         My.Settings.Save()
-        Close()
+        DialogResult = DialogResult.Cancel
     End Sub
 
     Public Sub BtnCancel_WantsToQuit()
         My.Settings.WantsToQuit = False
         My.Settings.Save()
-        Close()
+        DialogResult = DialogResult.Cancel
     End Sub
     ' <<<============= BtnCancel Events END =============>>>
     '  <<<================ BtnYES Events ===============>>>
@@ -133,11 +148,10 @@ Public Class frmMSGBOX
         My.Settings.ViewingInstructions = True
         My.Settings.Save()
 
-        Dim oForm As frmMSGBOX
-        oForm = New frmMSGBOX()
+        Dim oForm As frmMSGBOX = New frmMSGBOX()
         oForm.ShowDialog()
         oForm = Nothing
-        Close()
+        DialogResult = DialogResult.Yes
     End Sub
 
     Public Sub BtnYES_WantsToQuit()
@@ -145,7 +159,7 @@ Public Class frmMSGBOX
         ' Via Setting IsQuitting to True, hooked to a Timer
         My.Settings.IsQuitting = True
         My.Settings.Save()
-        Close()
+        DialogResult = DialogResult.Yes
     End Sub
     '<<<=============== BtnYES Events END ===============>>>
     ' <<<================ BtnNO Events =================>>>

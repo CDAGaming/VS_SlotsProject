@@ -9,16 +9,9 @@ Option Infer Off
 Public Class FrmGame_3Slots
     Dim randGen As New Random
     Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
-        Dim oForm As FrmAbout
-        oForm = New FrmAbout()
-        oForm.Show()
+        Dim oForm As FrmAbout = New FrmAbout()
+        oForm.ShowDialog()
         oForm = Nothing
-    End Sub
-
-    Private Sub tmr_IsQuittingcheck_Tick(sender As Object, e As EventArgs) Handles tmr_IsQuittingcheck.Tick
-        If My.Settings.IsQuitting Then
-            Close()
-        End If
     End Sub
 
     Private Sub btnQuit_Click(sender As Object, e As EventArgs) Handles btnQuit.Click
@@ -29,10 +22,10 @@ Public Class FrmGame_3Slots
         My.Settings.WantsToQuit = True
         My.Settings.Save()
 
-        Dim oForm As frmMSGBOX
-        oForm = New frmMSGBOX()
-        oForm.Show()
-        oForm = Nothing
+        Dim oForm As frmMSGBOX = New frmMSGBOX()
+        If oForm.ShowDialog() = DialogResult.Yes Then
+            Close()
+        End If
     End Sub
 
     Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
@@ -50,8 +43,11 @@ Public Class FrmGame_3Slots
 
         If intNum1 = intNum2 AndAlso intNum1 = intNum3 Then
             lblNum1.BackColor = Color.Green
+            lblNum1.ForeColor = Color.Gold
             lblNum2.BackColor = Color.Green
+            lblNum2.ForeColor = Color.Gold
             lblNum3.BackColor = Color.Green
+            lblNum3.ForeColor = Color.Gold
         End If
     End Sub
 End Class

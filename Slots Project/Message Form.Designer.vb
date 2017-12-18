@@ -24,12 +24,14 @@ Partial Class frmMSGBOX
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.picIcon = New System.Windows.Forms.PictureBox()
         Me.lblMSG = New System.Windows.Forms.Label()
         Me.btnOK = New System.Windows.Forms.Button()
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.btnYES = New System.Windows.Forms.Button()
         Me.btnNO = New System.Windows.Forms.Button()
+        Me.tmrLoadCheck = New System.Windows.Forms.Timer(Me.components)
         CType(Me.picIcon, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -96,6 +98,11 @@ Partial Class frmMSGBOX
         Me.btnNO.UseVisualStyleBackColor = True
         Me.btnNO.Visible = False
         '
+        'tmrLoadCheck
+        '
+        Me.tmrLoadCheck.Enabled = True
+        Me.tmrLoadCheck.Interval = 10
+        '
         'frmMSGBOX
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 23.0!)
@@ -127,4 +134,5 @@ Partial Class frmMSGBOX
     Friend WithEvents btnCancel As Button
     Friend WithEvents btnYES As Button
     Friend WithEvents btnNO As Button
+    Friend WithEvents tmrLoadCheck As Timer
 End Class

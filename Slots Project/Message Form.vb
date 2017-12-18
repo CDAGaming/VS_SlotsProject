@@ -7,59 +7,6 @@ Option Strict On
 Option Infer Off
 
 Public Class frmMSGBOX
-    ' <<<< LOAD EVENTS >>>>
-    Private Sub FrmMSGBOX_Load(sender As Object, e As System.EventArgs) Handles MyBase.Load
-        'Choose Data & Events to Display Depending on Settings
-        If My.Settings.ViewingInstructions Then
-            Load_ViewingInstructions()
-        End If
-        If My.Settings.AskingForInstructions Then
-            Load_AskingForInstructions()
-        End If
-        If My.Settings.WantsToQuit Then
-            Load_WantsToQuit()
-        End If
-    End Sub
-
-    Public Sub Load_ViewingInstructions()
-        Text = My.Resources.TitleInstructions
-        picIcon.BackgroundImage = My.Resources.msgBox_Info
-        lblMSG.Text = My.Resources.MSGInstructions
-        btnCancel.Visible = True
-        btnCancel.Enabled = True
-        btnOK.Visible = True
-        btnOK.Enabled = True
-        AcceptButton = btnOK
-        CancelButton = btnCancel
-    End Sub
-
-    Public Sub Load_AskingForInstructions()
-        Text = My.Resources.Title_AskingInstructions
-        picIcon.BackgroundImage = My.Resources.msgBox_Info
-        lblMSG.Text = My.Resources.MSG_AskingInstructions
-        btnCancel.Visible = True
-        btnCancel.Enabled = True
-        btnYES.Visible = True
-        btnYES.Enabled = True
-        btnNO.Visible = True
-        btnNO.Enabled = True
-        AcceptButton = btnYES
-        CancelButton = btnCancel
-    End Sub
-
-    Public Sub Load_WantsToQuit()
-        Text = My.Resources.Title_IsQuitting
-        picIcon.BackgroundImage = My.Resources.msgBox_Warning
-        lblMSG.Text = My.Resources.MSG_IsQuitting
-        btnCancel.Visible = True
-        btnCancel.Enabled = True
-        btnYES.Visible = True
-        btnYES.Enabled = True
-        btnNO.Visible = True
-        btnNO.Enabled = True
-        AcceptButton = btnYES
-        CancelButton = btnCancel
-    End Sub
     ' <<<<============= Button MAIN Events =============>>>>
     Private Sub BtnOK_Click(sender As Object, e As System.EventArgs) Handles btnOK.Click
         If My.Settings.ViewingInstructions Then
@@ -96,10 +43,10 @@ Public Class frmMSGBOX
             BtnNO_WantsToQuit()
         End If
     End Sub
-    ' <<<<=========== Button MAIN Events END =============>>>>
 
+    ' <<<<=========== Button MAIN Events END =============>>>>
     Public Sub BtnOK_ViewingInstructions()
-        'Launch Game Form Based on Slots
+        'Launch Game Form Based on Slots you Picked
         Select Case My.Settings.Slots
             Case 3
                 Dim oForm_3Game As FrmGame_3Slots = New FrmGame_3Slots()
@@ -143,14 +90,10 @@ Public Class frmMSGBOX
     End Sub
     ' <<<============= BtnCancel Events END =============>>>
     '  <<<================ BtnYES Events ===============>>>
-    Public Sub BtnYES_AskingForInstructions()
+    Public Sub BtnYES_AskingForInstructions() ' Event is Dual Dialog (No DialogResult until 2nd Dialog)
         My.Settings.AskingForInstructions = False
         My.Settings.ViewingInstructions = True
         My.Settings.Save()
-
-        Dim oForm As frmMSGBOX = New frmMSGBOX()
-        oForm.ShowDialog()
-        DialogResult = DialogResult.Yes
     End Sub
 
     Public Sub BtnYES_WantsToQuit()
@@ -177,5 +120,52 @@ Public Class frmMSGBOX
         My.Settings.AskingForInstructions = False
         My.Settings.WantsToQuit = False
         My.Settings.Save()
+    End Sub
+
+    Private Sub tmrLoadCheck_Tick(sender As Object, e As EventArgs) Handles tmrLoadCheck.Tick
+        ' On Each Tick, Check & Adjust MessageBox According to Settings
+        If My.Settings.ViewingInstructions Then
+            Text = My.Resources.TitleInstructions
+            picIcon.BackgroundImage = My.Resources.msgBox_Info
+            lblMSG.Text = My.Resources.MSGInstructions
+            btnCancel.Visible = True
+            btnCancel.Enabled = True
+            btnOK.Visible = True
+            btnOK.Enabled = True
+            btnNO.Visible = False
+            btnNO.Enabled = False
+            btnYES.Visible = False
+            btnYES.Enabled = False
+            AcceptButton = btnOK
+            CancelButton = btnCancel
+        ElseIf My.Settings.AskingForInstructions Then
+            Text = My.Resources.Title_AskingInstructions
+            picIcon.BackgroundImage = My.Resources.msgBox_Info
+            lblMSG.Text = My.Resources.MSG_AskingInstructions
+            btnCancel.Visible = True
+            btnCancel.Enabled = True
+            btnYES.Visible = True
+            btnYES.Enabled = True
+            btnNO.Visible = True
+            btnNO.Enabled = True
+            btnOK.Visible = False
+            btnOK.Enabled = False
+            AcceptButton = btnYES
+            CancelButton = btnCancel
+        ElseIf My.Settings.WantsToQuit Then
+            Text = My.Resources.Title_IsQuitting
+            picIcon.BackgroundImage = My.Resources.msgBox_Warning
+            lblMSG.Text = My.Resources.MSG_IsQuitting
+            btnCancel.Visible = True
+            btnCancel.Enabled = True
+            btnYES.Visible = True
+            btnYES.Enabled = True
+            btnNO.Visible = True
+            btnNO.Enabled = True
+            btnOK.Visible = False
+            btnOK.Enabled = False
+            AcceptButton = btnYES
+            CancelButton = btnCancel
+        End If
     End Sub
 End Class

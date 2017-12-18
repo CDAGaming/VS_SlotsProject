@@ -22,6 +22,7 @@ Partial Class FrmGame_4Slots
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -32,6 +33,7 @@ Partial Class FrmGame_4Slots
         Me.lblNum2 = New System.Windows.Forms.Label()
         Me.lblNum1 = New System.Windows.Forms.Label()
         Me.lblNum4 = New System.Windows.Forms.Label()
+        Me.tmrWinCheck = New System.Windows.Forms.Timer(Me.components)
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -55,13 +57,13 @@ Partial Class FrmGame_4Slots
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(125, 26)
         Me.AboutToolStripMenuItem.Text = "About"
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(125, 26)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'btnQuit
@@ -126,6 +128,11 @@ Partial Class FrmGame_4Slots
         Me.lblNum4.TabIndex = 12
         Me.lblNum4.Text = "0"
         '
+        'tmrWinCheck
+        '
+        Me.tmrWinCheck.Enabled = True
+        Me.tmrWinCheck.Interval = 10
+        '
         'FrmGame_4Slots
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 28.0!)
@@ -162,4 +169,5 @@ Partial Class FrmGame_4Slots
     Friend WithEvents lblNum2 As Label
     Friend WithEvents lblNum1 As Label
     Friend WithEvents lblNum4 As Label
+    Friend WithEvents tmrWinCheck As Timer
 End Class

@@ -22,6 +22,7 @@ Partial Class FrmGame_3Slots
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -31,6 +32,7 @@ Partial Class FrmGame_3Slots
         Me.lblNum3 = New System.Windows.Forms.Label()
         Me.btnRoll = New System.Windows.Forms.Button()
         Me.btnQuit = New System.Windows.Forms.Button()
+        Me.tmrWinCheck = New System.Windows.Forms.Timer(Me.components)
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -114,6 +116,11 @@ Partial Class FrmGame_3Slots
         Me.btnQuit.Text = "Quit"
         Me.btnQuit.UseVisualStyleBackColor = True
         '
+        'tmrWinCheck
+        '
+        Me.tmrWinCheck.Enabled = True
+        Me.tmrWinCheck.Interval = 10
+        '
         'FrmGame_3Slots
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 28.0!)
@@ -148,4 +155,5 @@ Partial Class FrmGame_3Slots
     Friend WithEvents lblNum3 As Label
     Friend WithEvents btnRoll As Button
     Friend WithEvents btnQuit As Button
+    Friend WithEvents tmrWinCheck As Timer
 End Class

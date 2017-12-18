@@ -48,6 +48,8 @@ Public Class FrmGame_3Slots
             lblNum2.ForeColor = Color.Gold
             lblNum3.BackColor = Color.Green
             lblNum3.ForeColor = Color.Gold
+
+            ' PLACEHOLDER: ADD AskingToRestart Variable
         End If
     End Sub
 End Class

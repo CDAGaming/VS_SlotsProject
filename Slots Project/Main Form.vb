@@ -29,15 +29,12 @@ Public Class FrmMain
     End Sub
 
     Private Sub FrmMain_Load(sender As Object, e As System.EventArgs) Handles MyBase.Load
+        ' Initial Loading of TrackBars & Labels
         trkBar_SlotNumber.Value = My.Settings.Slots
+        lbl_trkBarSlotValue.Text = My.Settings.Slots.ToString()
+
         trkBar_Numbers.Value = My.Settings.RandomNumbers
-    End Sub
-
-    Private Sub SlotNumber_ValuesChanged(sender As Object, e As System.EventArgs) Handles trkBar_SlotNumber.ValueChanged
-        lbl_trkBarSlotValue.Text = trkBar_SlotNumber.Value.ToString()
-
-        My.Settings.Slots = trkBar_SlotNumber.Value
-        My.Settings.Save()
+        lbl_trkBarNumbersValue.Text = My.Settings.RandomNumbers.ToString()
     End Sub
 
     Private Sub BtnStart_Click(sender As Object, e As System.EventArgs) Handles btnStart.Click
@@ -51,10 +48,13 @@ Public Class FrmMain
         End If
     End Sub
 
-    Private Sub RandomNumbers_ValueChanged(sender As Object, e As System.EventArgs) Handles trkBar_Numbers.ValueChanged
+    Private Sub tmr_ValueChanged_Tick(sender As Object, e As EventArgs) Handles tmr_ValueChanged.Tick
+        ' On Each Tick, Apply any changes for Settings on Front and Backend
         lbl_trkBarNumbersValue.Text = trkBar_Numbers.Value.ToString()
+        lbl_trkBarSlotValue.Text = trkBar_SlotNumber.Value.ToString()
 
         My.Settings.RandomNumbers = trkBar_Numbers.Value
+        My.Settings.Slots = trkBar_SlotNumber.Value
         My.Settings.Save()
     End Sub
 End Class

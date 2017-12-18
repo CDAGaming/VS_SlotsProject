@@ -40,6 +40,7 @@ Partial Class FrmMain
         Me.lbl_trkBarSlotValue = New System.Windows.Forms.Label()
         Me.lbl_trkBarNumbersValue = New System.Windows.Forms.Label()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.tmr_ValueChanged = New System.Windows.Forms.Timer(Me.components)
         Me.MenuStrip1.SuspendLayout()
         CType(Me.trkBar_SlotNumber, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.trkBar_Numbers, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -74,13 +75,13 @@ Partial Class FrmMain
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(125, 26)
         Me.AboutToolStripMenuItem.Text = "About"
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(125, 26)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'InstructionsToolStripMenuItem
@@ -164,6 +165,11 @@ Partial Class FrmMain
         Me.lbl_trkBarNumbersValue.TabIndex = 8
         Me.lbl_trkBarNumbersValue.Text = "0"
         '
+        'tmr_ValueChanged
+        '
+        Me.tmr_ValueChanged.Enabled = True
+        Me.tmr_ValueChanged.Interval = 10
+        '
         'FrmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 28.0!)
@@ -212,4 +218,5 @@ Partial Class FrmMain
     Friend WithEvents lbl_trkBarSlotValue As Label
     Friend WithEvents lbl_trkBarNumbersValue As Label
     Friend WithEvents ToolTip1 As ToolTip
+    Friend WithEvents tmr_ValueChanged As Timer
 End Class

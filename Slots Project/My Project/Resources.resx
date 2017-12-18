@@ -1159,4 +1159,11 @@ When you are Ready, Click OK to Start with Current Settings.</value>
   <data name="Title_IsQuitting" xml:space="preserve">
     <value>Slots: Quit Game?</value>
   </data>
+  <data name="MSG_IsRestarting" xml:space="preserve">
+    <value>You Win!
+Would you like to Play this Game Again with the Same Settings?</value>
+  </data>
+  <data name="Title_IsRestarting" xml:space="preserve">
+    <value>Slots: Restart Game?</value>
+  </data>
 </root>

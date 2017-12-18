@@ -79,6 +79,16 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to You Win!
+        '''Would you like to Play this Game Again with the Same Settings?.
+        '''</summary>
+        Friend ReadOnly Property MSG_IsRestarting() As String
+            Get
+                Return ResourceManager.GetString("MSG_IsRestarting", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
         Friend ReadOnly Property msgBox_Critical() As System.Drawing.Bitmap
@@ -136,6 +146,15 @@ Namespace My.Resources
         Friend ReadOnly Property Title_IsQuitting() As String
             Get
                 Return ResourceManager.GetString("Title_IsQuitting", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Slots: Restart Game?.
+        '''</summary>
+        Friend ReadOnly Property Title_IsRestarting() As String
+            Get
+                Return ResourceManager.GetString("Title_IsRestarting", resourceCulture)
             End Get
         End Property
         

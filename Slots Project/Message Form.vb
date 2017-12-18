@@ -21,9 +21,6 @@ Public Class frmMSGBOX
         If My.Settings.AskingForInstructions Then
             BtnCancel_AskingForInstructions()
         End If
-        If My.Settings.WantsToQuit Then
-            BtnCancel_WantsToQuit()
-        End If
     End Sub
 
     Private Sub BtnYES_Click(sender As Object, e As System.EventArgs) Handles btnYES.Click
@@ -83,11 +80,6 @@ Public Class frmMSGBOX
         DialogResult = DialogResult.Cancel
     End Sub
 
-    Public Sub BtnCancel_WantsToQuit()
-        My.Settings.WantsToQuit = False
-        My.Settings.Save()
-        DialogResult = DialogResult.Cancel
-    End Sub
     ' <<<============= BtnCancel Events END =============>>>
     '  <<<================ BtnYES Events ===============>>>
     Public Sub BtnYES_AskingForInstructions() ' Event is Dual Dialog (No DialogResult until 2nd Dialog)
@@ -110,8 +102,9 @@ Public Class frmMSGBOX
     End Sub
 
     Public Sub BtnNO_WantsToQuit()
-        ' Launch this Event instead of Duplicating Code
-        BtnCancel_WantsToQuit()
+        My.Settings.WantsToQuit = False
+        My.Settings.Save()
+        DialogResult = DialogResult.No
     End Sub
     '<<<================ BtnNO Events END =================>>>
 
@@ -156,16 +149,30 @@ Public Class frmMSGBOX
             Text = My.Resources.Title_IsQuitting
             picIcon.BackgroundImage = My.Resources.msgBox_Warning
             lblMSG.Text = My.Resources.MSG_IsQuitting
-            btnCancel.Visible = True
-            btnCancel.Enabled = True
             btnYES.Visible = True
             btnYES.Enabled = True
             btnNO.Visible = True
             btnNO.Enabled = True
             btnOK.Visible = False
             btnOK.Enabled = False
+            btnCancel.Visible = False
+            btnCancel.Enabled = False
             AcceptButton = btnYES
-            CancelButton = btnCancel
+            CancelButton = btnNO
+        ElseIf My.Settings.WantsToRestart Then
+            Text = My.Resources.Title_IsRestarting
+            picIcon.BackgroundImage = My.Resources.msgBox_Info
+            lblMSG.Text = My.Resources.MSG_IsRestarting
+            btnYES.Visible = True
+            btnYES.Enabled = True
+            btnNO.Visible = True
+            btnNO.Enabled = True
+            btnOK.Visible = False
+            btnOK.Enabled = False
+            btnCancel.Visible = False
+            btnCancel.Enabled = False
+            AcceptButton = btnYES
+            CancelButton = btnNO
         End If
     End Sub
 End Class

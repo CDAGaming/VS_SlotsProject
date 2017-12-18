@@ -150,14 +150,12 @@ Public Class frmMSGBOX
 
         Dim oForm As frmMSGBOX = New frmMSGBOX()
         oForm.ShowDialog()
-        oForm = Nothing
         DialogResult = DialogResult.Yes
     End Sub
 
     Public Sub BtnYES_WantsToQuit()
         ' Close the Game Form Currently Opened
-        ' Via Setting IsQuitting to True, hooked to a Timer
-        My.Settings.IsQuitting = True
+        My.Settings.WantsToQuit = False
         My.Settings.Save()
         DialogResult = DialogResult.Yes
     End Sub
@@ -178,7 +176,6 @@ Public Class frmMSGBOX
         My.Settings.ViewingInstructions = False
         My.Settings.AskingForInstructions = False
         My.Settings.WantsToQuit = False
-        My.Settings.IsQuitting = False
         My.Settings.Save()
     End Sub
 End Class

@@ -16,7 +16,6 @@ Public Class FrmGame_4Slots
     Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
         Dim oForm As FrmAbout = New FrmAbout()
         oForm.ShowDialog()
-        oForm = Nothing
     End Sub
 
     Private Sub btnQuit_Click(sender As Object, e As EventArgs) Handles btnQuit.Click
@@ -63,13 +62,13 @@ Public Class FrmGame_4Slots
             ' PLACEHOLDER: ADD WIN AND RESTART PROCEDURES
         Else
             lblNum1.BackColor = Color.Transparent
-            lblNum1.ForeColor = Color.Black
+            lblNum1.ForeColor = Color.Maroon
             lblNum2.BackColor = Color.Transparent
-            lblNum2.ForeColor = Color.Black
+            lblNum2.ForeColor = Color.Maroon
             lblNum3.BackColor = Color.Transparent
-            lblNum3.ForeColor = Color.Black
+            lblNum3.ForeColor = Color.Maroon
             lblNum4.BackColor = Color.Transparent
-            lblNum4.ForeColor = Color.Black
+            lblNum4.ForeColor = Color.Maroon
         End If
     End Sub
 End Class

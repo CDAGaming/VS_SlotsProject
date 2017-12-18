@@ -10,7 +10,6 @@ Public Class FrmMain
     Private Sub AboutToolStripMenuItem_Click(sender As Object, e As System.EventArgs) Handles AboutToolStripMenuItem.Click
         Dim oForm As FrmAbout = New FrmAbout()
         oForm.ShowDialog()
-        oForm = Nothing
     End Sub
 
     Private Sub ExitToolStripMenuItem_Click(sender As Object, e As System.EventArgs) Handles ExitToolStripMenuItem.Click

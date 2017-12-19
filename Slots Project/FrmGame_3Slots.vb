@@ -41,9 +41,9 @@ Public Class FrmGame_3Slots
 
     Private Sub tmrWinCheck_Tick(sender As Object, e As EventArgs) Handles tmrWinCheck.Tick
         If intNum1 = intNum2 AndAlso intNum1 = intNum3 Then
-            lblNum1.ForeColor = Color.Gold
-            lblNum2.ForeColor = Color.Gold
-            lblNum3.ForeColor = Color.Gold
+            lblNum1.ForeColor = Color.Green
+            lblNum2.ForeColor = Color.Green
+            lblNum3.ForeColor = Color.Green
 
             tmrWinCheck.Stop()
             btnRoll.Enabled = False

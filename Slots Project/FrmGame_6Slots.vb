@@ -93,6 +93,6 @@ Public Class FrmGame_6Slots
         lblNum3.Text = intNum3.ToString()
         lblNum4.Text = intNum4.ToString()
         lblNum5.Text = intNum5.ToString()
-        lblNum5.Text = intNum6.ToString()
+        lblNum6.Text = intNum6.ToString()
     End Sub
 End Class

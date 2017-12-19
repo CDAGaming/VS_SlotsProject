@@ -59,7 +59,9 @@ Public Class frmMSGBOX
                 oForm_5Game.Show()
                 Close()
             Case 6
-                'Launch frmGame_6Slots
+                Dim oForm_6Game As FrmGame_6Slots = New FrmGame_6Slots()
+                oForm_6Game.Show()
+                Close()
             Case 7
                 'Launch frmGame_7Slots
             Case Else

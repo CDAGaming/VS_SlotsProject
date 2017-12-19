@@ -1,4 +1,4 @@
-﻿' Name:         Slots Project - FINAL - 4 Slot Game
+﻿' Name:         Slots Project - FINAL - 5 Slot Game
 ' Purpose:      The Classic Game of Slots!
 ' Programmer:   Chris Stack on 12/21/2017
 
@@ -6,12 +6,14 @@ Option Explicit On
 Option Strict On
 Option Infer Off
 
-Public Class FrmGame_4Slots
+Public Class FrmGame_6Slots
     Dim randGen As New Random
     Dim intNum1 As Integer
     Dim intNum2 As Integer
     Dim intNum3 As Integer
     Dim intNum4 As Integer
+    Dim intNum5 As Integer
+    Dim intNum6 As Integer
 
     Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
         Dim oForm As FrmAbout = New FrmAbout()
@@ -41,11 +43,13 @@ Public Class FrmGame_4Slots
     End Sub
 
     Private Sub TmrWinCheck_Tick(sender As Object, e As EventArgs) Handles tmrWinCheck.Tick
-        If intNum1 = intNum2 AndAlso intNum1 = intNum3 AndAlso intNum1 = intNum4 Then
+        If intNum1 = intNum2 AndAlso intNum1 = intNum3 AndAlso intNum1 = intNum4 AndAlso intNum1 = intNum5 AndAlso intNum1 = intNum6 Then
             lblNum1.ForeColor = Color.Green
             lblNum2.ForeColor = Color.Green
             lblNum3.ForeColor = Color.Green
             lblNum4.ForeColor = Color.Green
+            lblNum5.ForeColor = Color.Green
+            lblNum6.ForeColor = Color.Green
 
             tmrWinCheck.Stop()
             btnRoll.Enabled = False
@@ -67,10 +71,12 @@ Public Class FrmGame_4Slots
             lblNum2.ForeColor = Color.Maroon
             lblNum3.ForeColor = Color.Maroon
             lblNum4.ForeColor = Color.Maroon
+            lblNum5.ForeColor = Color.Maroon
+            lblNum6.ForeColor = Color.Maroon
         End If
     End Sub
 
-    Private Sub FrmGame_4Slots_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub FrmGame_6Slots_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         RollNumbers()
     End Sub
 
@@ -79,10 +85,14 @@ Public Class FrmGame_4Slots
         intNum2 = randGen.Next(1, My.Settings.RandomNumbers)
         intNum3 = randGen.Next(1, My.Settings.RandomNumbers)
         intNum4 = randGen.Next(1, My.Settings.RandomNumbers)
+        intNum5 = randGen.Next(1, My.Settings.RandomNumbers)
+        intNum6 = randGen.Next(1, My.Settings.RandomNumbers)
 
         lblNum1.Text = intNum1.ToString()
         lblNum2.Text = intNum2.ToString()
         lblNum3.Text = intNum3.ToString()
         lblNum4.Text = intNum4.ToString()
+        lblNum5.Text = intNum5.ToString()
+        lblNum5.Text = intNum6.ToString()
     End Sub
 End Class

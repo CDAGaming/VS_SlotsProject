@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class FrmGame_4Slots
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+Partial Class FrmGame_5Slots
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()>
+    <System.Diagnostics.DebuggerNonUserCode()> _
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,19 +20,20 @@ Partial Class FrmGame_4Slots
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()>
+    <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.lblNum4 = New System.Windows.Forms.Label()
         Me.btnQuit = New System.Windows.Forms.Button()
         Me.btnRoll = New System.Windows.Forms.Button()
         Me.lblNum3 = New System.Windows.Forms.Label()
         Me.lblNum2 = New System.Windows.Forms.Label()
         Me.lblNum1 = New System.Windows.Forms.Label()
-        Me.lblNum4 = New System.Windows.Forms.Label()
+        Me.lblNum5 = New System.Windows.Forms.Label()
         Me.tmrWinCheck = New System.Windows.Forms.Timer(Me.components)
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -66,6 +67,17 @@ Partial Class FrmGame_4Slots
         Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(125, 26)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
+        'lblNum4
+        '
+        Me.lblNum4.AutoSize = True
+        Me.lblNum4.Font = New System.Drawing.Font("Impact", 36.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNum4.ForeColor = System.Drawing.Color.Maroon
+        Me.lblNum4.Location = New System.Drawing.Point(258, 49)
+        Me.lblNum4.Name = "lblNum4"
+        Me.lblNum4.Size = New System.Drawing.Size(64, 75)
+        Me.lblNum4.TabIndex = 6
+        Me.lblNum4.Text = "0"
+        '
         'btnQuit
         '
         Me.btnQuit.DialogResult = System.Windows.Forms.DialogResult.Cancel
@@ -90,7 +102,7 @@ Partial Class FrmGame_4Slots
         Me.lblNum3.AutoSize = True
         Me.lblNum3.Font = New System.Drawing.Font("Impact", 36.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblNum3.ForeColor = System.Drawing.Color.Maroon
-        Me.lblNum3.Location = New System.Drawing.Point(188, 87)
+        Me.lblNum3.Location = New System.Drawing.Point(188, 124)
         Me.lblNum3.Name = "lblNum3"
         Me.lblNum3.Size = New System.Drawing.Size(64, 75)
         Me.lblNum3.TabIndex = 5
@@ -101,7 +113,7 @@ Partial Class FrmGame_4Slots
         Me.lblNum2.AutoSize = True
         Me.lblNum2.Font = New System.Drawing.Font("Impact", 36.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblNum2.ForeColor = System.Drawing.Color.Maroon
-        Me.lblNum2.Location = New System.Drawing.Point(82, 87)
+        Me.lblNum2.Location = New System.Drawing.Point(82, 124)
         Me.lblNum2.Name = "lblNum2"
         Me.lblNum2.Size = New System.Drawing.Size(64, 75)
         Me.lblNum2.TabIndex = 4
@@ -112,29 +124,29 @@ Partial Class FrmGame_4Slots
         Me.lblNum1.AutoSize = True
         Me.lblNum1.Font = New System.Drawing.Font("Impact", 36.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblNum1.ForeColor = System.Drawing.Color.Maroon
-        Me.lblNum1.Location = New System.Drawing.Point(12, 87)
+        Me.lblNum1.Location = New System.Drawing.Point(12, 49)
         Me.lblNum1.Name = "lblNum1"
         Me.lblNum1.Size = New System.Drawing.Size(64, 75)
         Me.lblNum1.TabIndex = 3
         Me.lblNum1.Text = "0"
         '
-        'lblNum4
+        'lblNum5
         '
-        Me.lblNum4.AutoSize = True
-        Me.lblNum4.Font = New System.Drawing.Font("Impact", 36.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblNum4.ForeColor = System.Drawing.Color.Maroon
-        Me.lblNum4.Location = New System.Drawing.Point(258, 87)
-        Me.lblNum4.Name = "lblNum4"
-        Me.lblNum4.Size = New System.Drawing.Size(64, 75)
-        Me.lblNum4.TabIndex = 6
-        Me.lblNum4.Text = "0"
+        Me.lblNum5.AutoSize = True
+        Me.lblNum5.Font = New System.Drawing.Font("Impact", 36.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNum5.ForeColor = System.Drawing.Color.Maroon
+        Me.lblNum5.Location = New System.Drawing.Point(135, 49)
+        Me.lblNum5.Name = "lblNum5"
+        Me.lblNum5.Size = New System.Drawing.Size(64, 75)
+        Me.lblNum5.TabIndex = 7
+        Me.lblNum5.Text = "0"
         '
         'tmrWinCheck
         '
         Me.tmrWinCheck.Enabled = True
         Me.tmrWinCheck.Interval = 10
         '
-        'FrmGame_4Slots
+        'FrmGame_5Slots
         '
         Me.AcceptButton = Me.btnRoll
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 28.0!)
@@ -142,6 +154,7 @@ Partial Class FrmGame_4Slots
         Me.BackColor = System.Drawing.Color.Gray
         Me.CancelButton = Me.btnQuit
         Me.ClientSize = New System.Drawing.Size(334, 413)
+        Me.Controls.Add(Me.lblNum5)
         Me.Controls.Add(Me.lblNum4)
         Me.Controls.Add(Me.btnQuit)
         Me.Controls.Add(Me.btnRoll)
@@ -154,9 +167,9 @@ Partial Class FrmGame_4Slots
         Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
-        Me.Name = "FrmGame_4Slots"
+        Me.Name = "FrmGame_5Slots"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Slots - 4 Slot Game"
+        Me.Text = "Slots - 5 Slot Game"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
@@ -168,11 +181,12 @@ Partial Class FrmGame_4Slots
     Friend WithEvents FileToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AboutToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents lblNum4 As Label
     Friend WithEvents btnQuit As Button
     Friend WithEvents btnRoll As Button
     Friend WithEvents lblNum3 As Label
     Friend WithEvents lblNum2 As Label
     Friend WithEvents lblNum1 As Label
-    Friend WithEvents lblNum4 As Label
+    Friend WithEvents lblNum5 As Label
     Friend WithEvents tmrWinCheck As Timer
 End Class

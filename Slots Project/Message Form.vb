@@ -55,7 +55,9 @@ Public Class frmMSGBOX
                 oForm_4Game.Show()
                 Close()
             Case 5
-                'Launch frmGame_5Slots
+                Dim oForm_5Game As FrmGame_5Slots = New FrmGame_5Slots()
+                oForm_5Game.Show()
+                Close()
             Case 6
                 'Launch frmGame_6Slots
             Case 7
@@ -128,7 +130,7 @@ Public Class frmMSGBOX
         My.Settings.Save()
     End Sub
 
-    Private Sub tmrLoadCheck_Tick(sender As Object, e As EventArgs) Handles tmrLoadCheck.Tick
+    Private Sub TmrLoadCheck_Tick(sender As Object, e As EventArgs) Handles tmrLoadCheck.Tick
         ' On Each Tick, Check & Adjust MessageBox According to Settings
         If My.Settings.ViewingInstructions Then
             Text = My.Resources.TitleInstructions

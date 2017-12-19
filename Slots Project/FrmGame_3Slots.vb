@@ -17,7 +17,7 @@ Public Class FrmGame_3Slots
         oForm.ShowDialog()
     End Sub
 
-    Private Sub btnQuit_Click(sender As Object, e As EventArgs) Handles btnQuit.Click
+    Private Sub BtnQuit_Click(sender As Object, e As EventArgs) Handles btnQuit.Click
         IsQuitting()
     End Sub
 
@@ -35,11 +35,11 @@ Public Class FrmGame_3Slots
         IsQuitting()
     End Sub
 
-    Private Sub btnRoll_Click(sender As Object, e As EventArgs) Handles btnRoll.Click
+    Private Sub BtnRoll_Click(sender As Object, e As EventArgs) Handles btnRoll.Click
         RollNumbers()
     End Sub
 
-    Private Sub tmrWinCheck_Tick(sender As Object, e As EventArgs) Handles tmrWinCheck.Tick
+    Private Sub TmrWinCheck_Tick(sender As Object, e As EventArgs) Handles tmrWinCheck.Tick
         If intNum1 = intNum2 AndAlso intNum1 = intNum3 Then
             lblNum1.ForeColor = Color.Green
             lblNum2.ForeColor = Color.Green

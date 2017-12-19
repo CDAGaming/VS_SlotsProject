@@ -110,6 +110,18 @@
     <Compile Include="FrmGame_4Slots.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FrmGame_5Slots.Designer.vb">
+      <DependentUpon>FrmGame_5Slots.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGame_5Slots.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGame_6Slots.Designer.vb">
+      <DependentUpon>FrmGame_6Slots.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGame_6Slots.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Message Form.Designer.vb">
       <DependentUpon>Message Form.vb</DependentUpon>
     </Compile>
@@ -148,6 +160,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmGame_4Slots.resx">
       <DependentUpon>FrmGame_4Slots.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGame_5Slots.resx">
+      <DependentUpon>FrmGame_5Slots.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGame_6Slots.resx">
+      <DependentUpon>FrmGame_6Slots.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Message Form.resx">
       <DependentUpon>Message Form.vb</DependentUpon>

@@ -43,7 +43,7 @@ Partial Class FrmGame_3Slots
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(334, 28)
-        Me.MenuStrip1.TabIndex = 1
+        Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
         'FileToolStripMenuItem
@@ -73,7 +73,7 @@ Partial Class FrmGame_3Slots
         Me.lblNum1.Location = New System.Drawing.Point(62, 87)
         Me.lblNum1.Name = "lblNum1"
         Me.lblNum1.Size = New System.Drawing.Size(64, 75)
-        Me.lblNum1.TabIndex = 2
+        Me.lblNum1.TabIndex = 3
         Me.lblNum1.Text = "0"
         '
         'lblNum2
@@ -84,7 +84,7 @@ Partial Class FrmGame_3Slots
         Me.lblNum2.Location = New System.Drawing.Point(132, 87)
         Me.lblNum2.Name = "lblNum2"
         Me.lblNum2.Size = New System.Drawing.Size(64, 75)
-        Me.lblNum2.TabIndex = 3
+        Me.lblNum2.TabIndex = 4
         Me.lblNum2.Text = "0"
         '
         'lblNum3
@@ -95,7 +95,7 @@ Partial Class FrmGame_3Slots
         Me.lblNum3.Location = New System.Drawing.Point(202, 87)
         Me.lblNum3.Name = "lblNum3"
         Me.lblNum3.Size = New System.Drawing.Size(64, 75)
-        Me.lblNum3.TabIndex = 4
+        Me.lblNum3.TabIndex = 5
         Me.lblNum3.Text = "0"
         '
         'btnRoll
@@ -103,16 +103,17 @@ Partial Class FrmGame_3Slots
         Me.btnRoll.Location = New System.Drawing.Point(220, 363)
         Me.btnRoll.Name = "btnRoll"
         Me.btnRoll.Size = New System.Drawing.Size(102, 38)
-        Me.btnRoll.TabIndex = 5
+        Me.btnRoll.TabIndex = 2
         Me.btnRoll.Text = "Roll"
         Me.btnRoll.UseVisualStyleBackColor = True
         '
         'btnQuit
         '
+        Me.btnQuit.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnQuit.Location = New System.Drawing.Point(12, 363)
         Me.btnQuit.Name = "btnQuit"
         Me.btnQuit.Size = New System.Drawing.Size(102, 38)
-        Me.btnQuit.TabIndex = 6
+        Me.btnQuit.TabIndex = 1
         Me.btnQuit.Text = "Quit"
         Me.btnQuit.UseVisualStyleBackColor = True
         '
@@ -123,9 +124,11 @@ Partial Class FrmGame_3Slots
         '
         'FrmGame_3Slots
         '
+        Me.AcceptButton = Me.btnRoll
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 28.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Gray
+        Me.CancelButton = Me.btnQuit
         Me.ClientSize = New System.Drawing.Size(334, 413)
         Me.Controls.Add(Me.btnQuit)
         Me.Controls.Add(Me.btnRoll)
@@ -136,6 +139,8 @@ Partial Class FrmGame_3Slots
         Me.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "FrmGame_3Slots"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Slots - 3 Slot Game"

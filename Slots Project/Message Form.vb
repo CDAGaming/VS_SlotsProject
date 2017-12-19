@@ -17,8 +17,7 @@ Public Class frmMSGBOX
     Private Sub BtnCancel_Click(sender As Object, e As System.EventArgs) Handles btnCancel.Click
         If My.Settings.ViewingInstructions Then
             BtnCancel_ViewingInstructions()
-        End If
-        If My.Settings.AskingForInstructions Then
+        ElseIf My.Settings.AskingForInstructions Then
             BtnCancel_AskingForInstructions()
         End If
     End Sub
@@ -26,18 +25,20 @@ Public Class frmMSGBOX
     Private Sub BtnYES_Click(sender As Object, e As System.EventArgs) Handles btnYES.Click
         If My.Settings.AskingForInstructions Then
             BtnYES_AskingForInstructions()
-        End If
-        If My.Settings.WantsToQuit Then
+        ElseIf My.Settings.WantsToQuit Then
             BtnYES_WantsToQuit()
+        ElseIf My.Settings.WantsToRestart Then
+            BtnYES_WantsToRestart()
         End If
     End Sub
 
     Private Sub BtnNO_Click(sender As Object, e As System.EventArgs) Handles btnNO.Click
         If My.Settings.AskingForInstructions Then
             BtnNO_AskingForInstructions()
-        End If
-        If My.Settings.WantsToQuit Then
+        ElseIf My.Settings.WantsToQuit Then
             BtnNO_WantsToQuit()
+        ElseIf My.Settings.WantsToRestart Then
+            BtnNO_WantsToRestart()
         End If
     End Sub
 
@@ -94,6 +95,12 @@ Public Class frmMSGBOX
         My.Settings.Save()
         DialogResult = DialogResult.Yes
     End Sub
+
+    Public Sub BtnYES_WantsToRestart()
+        My.Settings.WantsToRestart = False
+        My.Settings.Save()
+        DialogResult = DialogResult.Yes
+    End Sub
     '<<<=============== BtnYES Events END ===============>>>
     ' <<<================ BtnNO Events =================>>>
     Public Sub BtnNO_AskingForInstructions()
@@ -103,6 +110,12 @@ Public Class frmMSGBOX
 
     Public Sub BtnNO_WantsToQuit()
         My.Settings.WantsToQuit = False
+        My.Settings.Save()
+        DialogResult = DialogResult.No
+    End Sub
+
+    Public Sub BtnNO_WantsToRestart()
+        My.Settings.WantsToRestart = False
         My.Settings.Save()
         DialogResult = DialogResult.No
     End Sub

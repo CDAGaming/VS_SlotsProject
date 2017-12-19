@@ -36,32 +36,48 @@ Public Class FrmGame_3Slots
     End Sub
 
     Private Sub btnRoll_Click(sender As Object, e As EventArgs) Handles btnRoll.Click
-        intNum1 = randGen.Next(My.Settings.RandomNumbers)
-        intNum2 = randGen.Next(My.Settings.RandomNumbers)
-        intNum3 = randGen.Next(My.Settings.RandomNumbers)
-
-        lblNum1.Text = intNum1.ToString()
-        lblNum2.Text = intNum2.ToString()
-        lblNum3.Text = intNum3.ToString()
+        RollNumbers()
     End Sub
 
     Private Sub tmrWinCheck_Tick(sender As Object, e As EventArgs) Handles tmrWinCheck.Tick
         If intNum1 = intNum2 AndAlso intNum1 = intNum3 Then
-            lblNum1.BackColor = Color.Green
             lblNum1.ForeColor = Color.Gold
-            lblNum2.BackColor = Color.Green
             lblNum2.ForeColor = Color.Gold
-            lblNum3.BackColor = Color.Green
             lblNum3.ForeColor = Color.Gold
 
-            ' PLACEHOLDER: ADD WIN AND RESTART PROCEDURES
+            tmrWinCheck.Stop()
+            btnRoll.Enabled = False
+            My.Settings.WantsToRestart = True
+            My.Settings.Save()
+
+            Dim oForm As frmMSGBOX = New frmMSGBOX()
+            If oForm.ShowDialog() = DialogResult.Yes Then
+                RollNumbers()
+                tmrWinCheck.Start()
+                btnRoll.Enabled = True
+            Else
+                My.Settings.WantsToRestart = False
+                My.Settings.Save()
+                Close()
+            End If
         Else
-            lblNum1.BackColor = Color.Transparent
             lblNum1.ForeColor = Color.Maroon
-            lblNum2.BackColor = Color.Transparent
             lblNum2.ForeColor = Color.Maroon
-            lblNum3.BackColor = Color.Transparent
             lblNum3.ForeColor = Color.Maroon
         End If
+    End Sub
+
+    Private Sub FrmGame_3Slots_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        RollNumbers()
+    End Sub
+
+    Public Sub RollNumbers()
+        intNum1 = randGen.Next(1, My.Settings.RandomNumbers)
+        intNum2 = randGen.Next(1, My.Settings.RandomNumbers)
+        intNum3 = randGen.Next(1, My.Settings.RandomNumbers)
+
+        lblNum1.Text = intNum1.ToString()
+        lblNum2.Text = intNum2.ToString()
+        lblNum3.Text = intNum3.ToString()
     End Sub
 End Class

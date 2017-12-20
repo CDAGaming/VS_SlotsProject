@@ -63,7 +63,9 @@ Public Class frmMSGBOX
                 oForm_6Game.Show()
                 Close()
             Case 7
-                'Launch frmGame_7Slots
+                Dim oForm_7Game As FrmGame_7Slots = New FrmGame_7Slots()
+                oForm_7Game.Show()
+                Close()
             Case Else
                 MessageBox.Show("Unknown Combination, Please Try Again.", "Slots: Error", MessageBoxButtons.OK)
                 Close()

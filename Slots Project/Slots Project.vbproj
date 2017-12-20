@@ -66,6 +66,9 @@
     <PlatformTarget>x86</PlatformTarget>
     <OutputPath>bin\x86\Release\</OutputPath>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\AppIcon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -206,10 +209,16 @@
     <EmbeddedResource Include="Resources\msgBox_Warning.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\msgBox_Critical.png" />
+    <EmbeddedResource Include="Resources\msgBox_Critical.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\msgBox_Info.png" />
+    <EmbeddedResource Include="Resources\msgBox_Info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\AppIcon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

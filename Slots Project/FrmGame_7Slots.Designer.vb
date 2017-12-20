@@ -23,6 +23,7 @@ Partial Class FrmGame_7Slots
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmGame_7Slots))
         Me.lblNum1 = New System.Windows.Forms.Label()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -61,13 +62,13 @@ Partial Class FrmGame_7Slots
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(125, 26)
         Me.AboutToolStripMenuItem.Text = "About"
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(125, 26)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'tmrWinCheck
@@ -172,9 +173,11 @@ Partial Class FrmGame_7Slots
         '
         'FrmGame_7Slots
         '
+        Me.AcceptButton = Me.btnRoll
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 28.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Gray
+        Me.CancelButton = Me.btnQuit
         Me.ClientSize = New System.Drawing.Size(334, 413)
         Me.Controls.Add(Me.lblNum7)
         Me.Controls.Add(Me.lblNum1)
@@ -188,6 +191,7 @@ Partial Class FrmGame_7Slots
         Me.Controls.Add(Me.MenuStrip1)
         Me.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.MaximizeBox = False
         Me.MinimizeBox = False

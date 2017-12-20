@@ -42,6 +42,7 @@ Partial Class FrmMain
         Me.lbl_trkBarNumbersValue = New System.Windows.Forms.Label()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.tmr_ValueChanged = New System.Windows.Forms.Timer(Me.components)
+        Me.lblTotalWins = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.trkBar_SlotNumber, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.trkBar_Numbers, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -171,12 +172,22 @@ Partial Class FrmMain
         Me.tmr_ValueChanged.Enabled = True
         Me.tmr_ValueChanged.Interval = 10
         '
+        'lblTotalWins
+        '
+        Me.lblTotalWins.Location = New System.Drawing.Point(17, 281)
+        Me.lblTotalWins.Name = "lblTotalWins"
+        Me.lblTotalWins.Size = New System.Drawing.Size(341, 60)
+        Me.lblTotalWins.TabIndex = 10
+        Me.lblTotalWins.Text = "You Won 0 Times Last Time!"
+        Me.lblTotalWins.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'FrmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 28.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Gray
         Me.ClientSize = New System.Drawing.Size(370, 403)
+        Me.Controls.Add(Me.lblTotalWins)
         Me.Controls.Add(Me.lbl_trkBarNumbersValue)
         Me.Controls.Add(Me.lbl_trkBarSlotValue)
         Me.Controls.Add(Me.btnStart)
@@ -221,4 +232,5 @@ Partial Class FrmMain
     Friend WithEvents lbl_trkBarNumbersValue As Label
     Friend WithEvents ToolTip1 As ToolTip
     Friend WithEvents tmr_ValueChanged As Timer
+    Friend WithEvents lblTotalWins As Label
 End Class

@@ -34,6 +34,7 @@ Partial Class FrmGame_3Slots
         Me.btnRoll = New System.Windows.Forms.Button()
         Me.btnQuit = New System.Windows.Forms.Button()
         Me.tmrWinCheck = New System.Windows.Forms.Timer(Me.components)
+        Me.lblWins = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -123,6 +124,17 @@ Partial Class FrmGame_3Slots
         Me.tmrWinCheck.Enabled = True
         Me.tmrWinCheck.Interval = 10
         '
+        'lblWins
+        '
+        Me.lblWins.Font = New System.Drawing.Font("Impact", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblWins.ForeColor = System.Drawing.Color.Yellow
+        Me.lblWins.Location = New System.Drawing.Point(120, 337)
+        Me.lblWins.Name = "lblWins"
+        Me.lblWins.Size = New System.Drawing.Size(94, 64)
+        Me.lblWins.TabIndex = 6
+        Me.lblWins.Text = "Wins" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "00"
+        Me.lblWins.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'FrmGame_3Slots
         '
         Me.AcceptButton = Me.btnRoll
@@ -131,6 +143,7 @@ Partial Class FrmGame_3Slots
         Me.BackColor = System.Drawing.Color.Gray
         Me.CancelButton = Me.btnQuit
         Me.ClientSize = New System.Drawing.Size(334, 413)
+        Me.Controls.Add(Me.lblWins)
         Me.Controls.Add(Me.btnQuit)
         Me.Controls.Add(Me.btnRoll)
         Me.Controls.Add(Me.lblNum3)
@@ -163,4 +176,5 @@ Partial Class FrmGame_3Slots
     Friend WithEvents btnRoll As Button
     Friend WithEvents btnQuit As Button
     Friend WithEvents tmrWinCheck As Timer
+    Friend WithEvents lblWins As Label
 End Class

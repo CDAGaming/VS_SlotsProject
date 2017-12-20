@@ -38,6 +38,7 @@ Partial Class FrmGame_7Slots
         Me.lblNum2 = New System.Windows.Forms.Label()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.lblNum7 = New System.Windows.Forms.Label()
+        Me.lblWins = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -171,6 +172,17 @@ Partial Class FrmGame_7Slots
         Me.lblNum7.TabIndex = 25
         Me.lblNum7.Text = "0"
         '
+        'lblWins
+        '
+        Me.lblWins.Font = New System.Drawing.Font("Impact", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblWins.ForeColor = System.Drawing.Color.Yellow
+        Me.lblWins.Location = New System.Drawing.Point(122, 341)
+        Me.lblWins.Name = "lblWins"
+        Me.lblWins.Size = New System.Drawing.Size(94, 64)
+        Me.lblWins.TabIndex = 26
+        Me.lblWins.Text = "Wins" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "00"
+        Me.lblWins.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'FrmGame_7Slots
         '
         Me.AcceptButton = Me.btnRoll
@@ -179,6 +191,7 @@ Partial Class FrmGame_7Slots
         Me.BackColor = System.Drawing.Color.Gray
         Me.CancelButton = Me.btnQuit
         Me.ClientSize = New System.Drawing.Size(334, 413)
+        Me.Controls.Add(Me.lblWins)
         Me.Controls.Add(Me.lblNum7)
         Me.Controls.Add(Me.lblNum1)
         Me.Controls.Add(Me.lblNum6)
@@ -219,4 +232,5 @@ Partial Class FrmGame_7Slots
     Friend WithEvents lblNum2 As Label
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents lblNum7 As Label
+    Friend WithEvents lblWins As Label
 End Class

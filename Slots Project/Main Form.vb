@@ -34,6 +34,8 @@ Public Class FrmMain
 
         trkBar_Numbers.Value = My.Settings.RandomNumbers
         lbl_trkBarNumbersValue.Text = My.Settings.RandomNumbers.ToString()
+
+        lblTotalWins.Text = My.Resources.MSGTotalWins.Replace("0", My.Settings.TotalWins.ToString())
     End Sub
 
     Private Sub BtnStart_Click(sender As Object, e As System.EventArgs) Handles btnStart.Click

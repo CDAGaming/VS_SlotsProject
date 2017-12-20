@@ -1,4 +1,4 @@
-﻿' Name:         Slots Project - FINAL - 6 Slot Game
+﻿' Name:         Slots Project - FINAL - 7 Slot Game
 ' Purpose:      The Classic Game of Slots!
 ' Programmer:   Chris Stack on 12/21/2017
 
@@ -6,7 +6,7 @@ Option Explicit On
 Option Strict On
 Option Infer Off
 
-Public Class FrmGame_6Slots
+Public Class FrmGame_7Slots
     Dim randGen As New Random
     Dim intNum1 As Integer
     Dim intNum2 As Integer
@@ -14,6 +14,7 @@ Public Class FrmGame_6Slots
     Dim intNum4 As Integer
     Dim intNum5 As Integer
     Dim intNum6 As Integer
+    Dim intNum7 As Integer
 
     Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
         Dim oForm As FrmAbout = New FrmAbout()
@@ -50,6 +51,7 @@ Public Class FrmGame_6Slots
             lblNum4.ForeColor = Color.Green
             lblNum5.ForeColor = Color.Green
             lblNum6.ForeColor = Color.Green
+            lblNum7.ForeColor = Color.Green
 
             tmrWinCheck.Stop()
             btnRoll.Enabled = False
@@ -73,10 +75,11 @@ Public Class FrmGame_6Slots
             lblNum4.ForeColor = Color.Maroon
             lblNum5.ForeColor = Color.Maroon
             lblNum6.ForeColor = Color.Maroon
+            lblNum7.ForeColor = Color.Maroon
         End If
     End Sub
 
-    Private Sub FrmGame_6Slots_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub FrmGame_7Slots_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         RollNumbers()
     End Sub
 
@@ -87,6 +90,7 @@ Public Class FrmGame_6Slots
         intNum4 = randGen.Next(1, My.Settings.RandomNumbers)
         intNum5 = randGen.Next(1, My.Settings.RandomNumbers)
         intNum6 = randGen.Next(1, My.Settings.RandomNumbers)
+        intNum7 = randGen.Next(1, My.Settings.RandomNumbers)
 
         lblNum1.Text = intNum1.ToString()
         lblNum2.Text = intNum2.ToString()
@@ -94,5 +98,6 @@ Public Class FrmGame_6Slots
         lblNum4.Text = intNum4.ToString()
         lblNum5.Text = intNum5.ToString()
         lblNum6.Text = intNum6.ToString()
+        lblNum7.Text = intNum7.ToString()
     End Sub
 End Class

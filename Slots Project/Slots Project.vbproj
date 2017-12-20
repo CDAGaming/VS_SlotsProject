@@ -122,6 +122,12 @@
     <Compile Include="FrmGame_6Slots.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FrmGame_7Slots.Designer.vb">
+      <DependentUpon>FrmGame_7Slots.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGame_7Slots.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Message Form.Designer.vb">
       <DependentUpon>Message Form.vb</DependentUpon>
     </Compile>
@@ -166,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmGame_6Slots.resx">
       <DependentUpon>FrmGame_6Slots.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGame_7Slots.resx">
+      <DependentUpon>FrmGame_7Slots.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Message Form.resx">
       <DependentUpon>Message Form.vb</DependentUpon>

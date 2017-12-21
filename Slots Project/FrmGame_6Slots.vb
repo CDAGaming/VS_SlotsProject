@@ -53,6 +53,7 @@ Public Class FrmGame_6Slots
 
             tmrWinCheck.Stop()
             btnRoll.Enabled = False
+            My.Settings.TotalWins += 1
             My.Settings.WantsToRestart = True
             My.Settings.Save()
 
@@ -61,6 +62,7 @@ Public Class FrmGame_6Slots
                 RollNumbers()
                 tmrWinCheck.Start()
                 btnRoll.Enabled = True
+                lblWins.Text = "Wins" & ControlChars.NewLine & My.Settings.TotalWins.ToString()
             Else
                 My.Settings.WantsToRestart = False
                 My.Settings.Save()

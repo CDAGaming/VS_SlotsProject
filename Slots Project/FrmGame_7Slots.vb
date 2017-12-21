@@ -86,13 +86,13 @@ Public Class FrmGame_7Slots
     End Sub
 
     Public Sub RollNumbers()
-        intNum1 = randGen.Next(1, My.Settings.RandomNumbers)
-        intNum2 = randGen.Next(1, My.Settings.RandomNumbers)
-        intNum3 = randGen.Next(1, My.Settings.RandomNumbers)
-        intNum4 = randGen.Next(1, My.Settings.RandomNumbers)
-        intNum5 = randGen.Next(1, My.Settings.RandomNumbers)
-        intNum6 = randGen.Next(1, My.Settings.RandomNumbers)
-        intNum7 = randGen.Next(1, My.Settings.RandomNumbers)
+        intNum1 = randGen.Next(1, My.Settings.RandomNumbers + 1)
+        intNum2 = randGen.Next(1, My.Settings.RandomNumbers + 1)
+        intNum3 = randGen.Next(1, My.Settings.RandomNumbers + 1)
+        intNum4 = randGen.Next(1, My.Settings.RandomNumbers + 1)
+        intNum5 = randGen.Next(1, My.Settings.RandomNumbers + 1)
+        intNum6 = randGen.Next(1, My.Settings.RandomNumbers + 1)
+        intNum7 = randGen.Next(1, My.Settings.RandomNumbers + 1)
 
         lblNum1.Text = intNum1.ToString()
         lblNum2.Text = intNum2.ToString()

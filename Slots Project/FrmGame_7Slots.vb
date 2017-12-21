@@ -44,7 +44,7 @@ Public Class FrmGame_7Slots
     End Sub
 
     Private Sub TmrWinCheck_Tick(sender As Object, e As EventArgs) Handles tmrWinCheck.Tick
-        If intNum1 = intNum2 AndAlso intNum1 = intNum3 AndAlso intNum1 = intNum4 AndAlso intNum1 = intNum5 AndAlso intNum1 = intNum6 Then
+        If intNum1 = intNum2 AndAlso intNum1 = intNum3 AndAlso intNum1 = intNum4 AndAlso intNum1 = intNum5 AndAlso intNum1 = intNum6 AndAlso intNum1 = intNum7 Then
             lblNum1.ForeColor = Color.Green
             lblNum2.ForeColor = Color.Green
             lblNum3.ForeColor = Color.Green

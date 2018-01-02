@@ -3064,7 +3064,7 @@ Would you like to Play this Game Again with the Same Settings?</value>
         wZqwNqwRa8WasXaK6pXGZ41l7JXKT0X37Flo7M3gGwz9UPux/wEccUGwHRWKEgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="MSGTotalWins" xml:space="preserve">
+  <data name="MSGLastWins" xml:space="preserve">
     <value>You have Won 0 Times Last Time You Played!
 Try and Beat That!</value>
   </data>

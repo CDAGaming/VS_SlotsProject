@@ -155,9 +155,9 @@ Namespace My.Resources
         '''  Looks up a localized string similar to You have Won 0 Times Last Time You Played!
         '''Try and Beat That!.
         '''</summary>
-        Friend ReadOnly Property MSGTotalWins() As String
+        Friend ReadOnly Property MSGLastWins() As String
             Get
-                Return ResourceManager.GetString("MSGTotalWins", resourceCulture)
+                Return ResourceManager.GetString("MSGLastWins", resourceCulture)
             End Get
         End Property
         

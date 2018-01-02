@@ -7,6 +7,7 @@ Option Strict On
 Option Infer Off
 
 Public Class FrmMain
+    Dim Slots() As Process
     Private Sub AboutToolStripMenuItem_Click(sender As Object, e As System.EventArgs) Handles AboutToolStripMenuItem.Click
         Dim oForm As FrmAbout = New FrmAbout()
         oForm.ShowDialog()
@@ -28,6 +29,11 @@ Public Class FrmMain
     End Sub
 
     Private Sub FrmMain_Load(sender As Object, e As System.EventArgs) Handles MyBase.Load
+        ' Check if this application is already Open, and If so, Close this
+        If Process.GetProcessesByName("Slots").Count > 1 Then
+            Close()
+        End If
+
         ' Initial Loading of TrackBars & Labels
         trkBar_SlotNumber.Value = My.Settings.Slots
         lbl_trkBarSlotValue.Text = My.Settings.Slots.ToString()
@@ -35,7 +41,11 @@ Public Class FrmMain
         trkBar_Numbers.Value = My.Settings.RandomNumbers
         lbl_trkBarNumbersValue.Text = My.Settings.RandomNumbers.ToString()
 
-        lblTotalWins.Text = My.Resources.MSGTotalWins.Replace("0", My.Settings.TotalWins.ToString())
+        If My.Settings.LastWins = 1 Then
+            lblLastWins.Text = My.Resources.MSGLastWins.Replace("0", My.Settings.LastWins.ToString()).Replace("Times", "Time")
+        Else
+            lblLastWins.Text = My.Resources.MSGLastWins.Replace("0", My.Settings.LastWins.ToString())
+        End If
     End Sub
 
     Private Sub BtnStart_Click(sender As Object, e As System.EventArgs) Handles btnStart.Click

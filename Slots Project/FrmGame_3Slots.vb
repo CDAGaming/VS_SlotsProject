@@ -47,18 +47,21 @@ Public Class FrmGame_3Slots
 
             tmrWinCheck.Stop()
             btnRoll.Enabled = False
-            My.Settings.TotalWins += 1
+            My.Settings.Wins += 1
             My.Settings.WantsToRestart = True
             My.Settings.Save()
+            lblWins.Text = "Wins" & ControlChars.NewLine & My.Settings.Wins.ToString()
 
             Dim oForm As frmMSGBOX = New frmMSGBOX()
             If oForm.ShowDialog() = DialogResult.Yes Then
                 RollNumbers()
                 tmrWinCheck.Start()
                 btnRoll.Enabled = True
-                lblWins.Text = "Wins" & ControlChars.NewLine & My.Settings.TotalWins.ToString()
             Else
                 My.Settings.WantsToRestart = False
+                My.Settings.LastWins = My.Settings.Wins
+                Threading.Thread.Sleep(1) 'Ensures Thread does the Lines above before continuing
+                My.Settings.Wins = 0
                 My.Settings.Save()
                 Close()
             End If

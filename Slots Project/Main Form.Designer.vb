@@ -42,7 +42,7 @@ Partial Class FrmMain
         Me.lbl_trkBarNumbersValue = New System.Windows.Forms.Label()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.tmr_ValueChanged = New System.Windows.Forms.Timer(Me.components)
-        Me.lblTotalWins = New System.Windows.Forms.Label()
+        Me.lblLastWins = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.trkBar_SlotNumber, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.trkBar_Numbers, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -53,7 +53,7 @@ Partial Class FrmMain
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(186, 40)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(172, 28)
+        Me.Label1.Size = New System.Drawing.Size(136, 21)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Welcome To Slots!"
         '
@@ -63,7 +63,7 @@ Partial Class FrmMain
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.InstructionsToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(370, 28)
+        Me.MenuStrip1.Size = New System.Drawing.Size(370, 24)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -71,25 +71,25 @@ Partial Class FrmMain
         '
         Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AboutToolStripMenuItem, Me.ExitToolStripMenuItem})
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
-        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(44, 24)
+        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 20)
         Me.FileToolStripMenuItem.Text = "File"
         '
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(125, 26)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(107, 22)
         Me.AboutToolStripMenuItem.Text = "About"
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(125, 26)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(107, 22)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'InstructionsToolStripMenuItem
         '
         Me.InstructionsToolStripMenuItem.Name = "InstructionsToolStripMenuItem"
-        Me.InstructionsToolStripMenuItem.Size = New System.Drawing.Size(96, 24)
+        Me.InstructionsToolStripMenuItem.Size = New System.Drawing.Size(81, 20)
         Me.InstructionsToolStripMenuItem.Text = "Instructions"
         '
         'Label2
@@ -97,7 +97,7 @@ Partial Class FrmMain
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(12, 112)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(128, 28)
+        Me.Label2.Size = New System.Drawing.Size(102, 21)
         Me.Label2.TabIndex = 3
         Me.Label2.Text = "Slot Number:"
         '
@@ -107,7 +107,7 @@ Partial Class FrmMain
         Me.trkBar_SlotNumber.Maximum = 7
         Me.trkBar_SlotNumber.Minimum = 3
         Me.trkBar_SlotNumber.Name = "trkBar_SlotNumber"
-        Me.trkBar_SlotNumber.Size = New System.Drawing.Size(182, 56)
+        Me.trkBar_SlotNumber.Size = New System.Drawing.Size(182, 45)
         Me.trkBar_SlotNumber.TabIndex = 4
         Me.ToolTip1.SetToolTip(Me.trkBar_SlotNumber, "Determines the Number of slots you'll have access to")
         Me.trkBar_SlotNumber.Value = 3
@@ -115,19 +115,19 @@ Partial Class FrmMain
         'trkBar_Numbers
         '
         Me.trkBar_Numbers.Location = New System.Drawing.Point(12, 233)
-        Me.trkBar_Numbers.Minimum = 1
+        Me.trkBar_Numbers.Minimum = 3
         Me.trkBar_Numbers.Name = "trkBar_Numbers"
-        Me.trkBar_Numbers.Size = New System.Drawing.Size(182, 56)
+        Me.trkBar_Numbers.Size = New System.Drawing.Size(182, 45)
         Me.trkBar_Numbers.TabIndex = 7
         Me.ToolTip1.SetToolTip(Me.trkBar_Numbers, "The Number Amount the Slots can choose from, for a possible match")
-        Me.trkBar_Numbers.Value = 1
+        Me.trkBar_Numbers.Value = 3
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Location = New System.Drawing.Point(12, 202)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(96, 28)
+        Me.Label3.Size = New System.Drawing.Size(78, 21)
         Me.Label3.TabIndex = 6
         Me.Label3.Text = "Numbers:"
         '
@@ -136,7 +136,7 @@ Partial Class FrmMain
         Me.Label4.AutoSize = True
         Me.Label4.Location = New System.Drawing.Point(12, 40)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(123, 28)
+        Me.Label4.Size = New System.Drawing.Size(98, 21)
         Me.Label4.TabIndex = 1
         Me.Label4.Text = "Setup Game:"
         '
@@ -154,7 +154,7 @@ Partial Class FrmMain
         Me.lbl_trkBarSlotValue.AutoSize = True
         Me.lbl_trkBarSlotValue.Location = New System.Drawing.Point(200, 143)
         Me.lbl_trkBarSlotValue.Name = "lbl_trkBarSlotValue"
-        Me.lbl_trkBarSlotValue.Size = New System.Drawing.Size(23, 28)
+        Me.lbl_trkBarSlotValue.Size = New System.Drawing.Size(19, 21)
         Me.lbl_trkBarSlotValue.TabIndex = 5
         Me.lbl_trkBarSlotValue.Text = "0"
         '
@@ -163,7 +163,7 @@ Partial Class FrmMain
         Me.lbl_trkBarNumbersValue.AutoSize = True
         Me.lbl_trkBarNumbersValue.Location = New System.Drawing.Point(200, 233)
         Me.lbl_trkBarNumbersValue.Name = "lbl_trkBarNumbersValue"
-        Me.lbl_trkBarNumbersValue.Size = New System.Drawing.Size(23, 28)
+        Me.lbl_trkBarNumbersValue.Size = New System.Drawing.Size(19, 21)
         Me.lbl_trkBarNumbersValue.TabIndex = 8
         Me.lbl_trkBarNumbersValue.Text = "0"
         '
@@ -172,22 +172,23 @@ Partial Class FrmMain
         Me.tmr_ValueChanged.Enabled = True
         Me.tmr_ValueChanged.Interval = 10
         '
-        'lblTotalWins
+        'lblLastWins
         '
-        Me.lblTotalWins.Location = New System.Drawing.Point(17, 281)
-        Me.lblTotalWins.Name = "lblTotalWins"
-        Me.lblTotalWins.Size = New System.Drawing.Size(341, 60)
-        Me.lblTotalWins.TabIndex = 10
-        Me.lblTotalWins.Text = "You Won 0 Times Last Time!"
-        Me.lblTotalWins.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblLastWins.Location = New System.Drawing.Point(17, 281)
+        Me.lblLastWins.Name = "lblLastWins"
+        Me.lblLastWins.Size = New System.Drawing.Size(341, 60)
+        Me.lblLastWins.TabIndex = 10
+        Me.lblLastWins.Text = "You Won 0 Times Last Time!"
+        Me.lblLastWins.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'FrmMain
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 28.0!)
+        Me.AcceptButton = Me.btnStart
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 21.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Gray
         Me.ClientSize = New System.Drawing.Size(370, 403)
-        Me.Controls.Add(Me.lblTotalWins)
+        Me.Controls.Add(Me.lblLastWins)
         Me.Controls.Add(Me.lbl_trkBarNumbersValue)
         Me.Controls.Add(Me.lbl_trkBarSlotValue)
         Me.Controls.Add(Me.btnStart)
@@ -232,5 +233,5 @@ Partial Class FrmMain
     Friend WithEvents lbl_trkBarNumbersValue As Label
     Friend WithEvents ToolTip1 As ToolTip
     Friend WithEvents tmr_ValueChanged As Timer
-    Friend WithEvents lblTotalWins As Label
+    Friend WithEvents lblLastWins As Label
 End Class

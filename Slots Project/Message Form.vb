@@ -10,40 +10,57 @@ Public Class frmMSGBOX
     ' <<<<============= Button MAIN Events =============>>>>
     Private Sub BtnOK_Click(sender As Object, e As System.EventArgs) Handles btnOK.Click
         If My.Settings.ViewingInstructions Then
-            BtnOK_ViewingInstructions()
+            LaunchGame()
         End If
     End Sub
 
     Private Sub BtnCancel_Click(sender As Object, e As System.EventArgs) Handles btnCancel.Click
         If My.Settings.ViewingInstructions Then
-            BtnCancel_ViewingInstructions()
+            My.Settings.ViewingInstructions = False
+            My.Settings.Save()
+            DialogResult = DialogResult.Cancel
         ElseIf My.Settings.AskingForInstructions Then
-            BtnCancel_AskingForInstructions()
+            My.Settings.AskingForInstructions = False
+            My.Settings.Save()
+            DialogResult = DialogResult.Cancel
         End If
     End Sub
 
     Private Sub BtnYES_Click(sender As Object, e As System.EventArgs) Handles btnYES.Click
         If My.Settings.AskingForInstructions Then
-            BtnYES_AskingForInstructions()
+            ' Dual-Dialog (Opens Viewing Instructions MSG)
+            My.Settings.AskingForInstructions = False
+            My.Settings.ViewingInstructions = True
+            My.Settings.Save()
         ElseIf My.Settings.WantsToQuit Then
-            BtnYES_WantsToQuit()
+            ' Close the Game Form Currently Opened
+            My.Settings.WantsToQuit = False
+            My.Settings.Save()
+            DialogResult = DialogResult.Yes
         ElseIf My.Settings.WantsToRestart Then
-            BtnYES_WantsToRestart()
+            My.Settings.WantsToRestart = False
+            My.Settings.Save()
+            DialogResult = DialogResult.Yes
         End If
     End Sub
 
     Private Sub BtnNO_Click(sender As Object, e As System.EventArgs) Handles btnNO.Click
         If My.Settings.AskingForInstructions Then
-            BtnNO_AskingForInstructions()
+            ' Launch this Event instead of Duplicating Code
+            LaunchGame()
         ElseIf My.Settings.WantsToQuit Then
-            BtnNO_WantsToQuit()
+            My.Settings.WantsToQuit = False
+            My.Settings.Save()
+            DialogResult = DialogResult.No
         ElseIf My.Settings.WantsToRestart Then
-            BtnNO_WantsToRestart()
+            My.Settings.WantsToRestart = False
+            My.Settings.Save()
+            DialogResult = DialogResult.No
         End If
     End Sub
 
     ' <<<<=========== Button MAIN Events END =============>>>>
-    Public Sub BtnOK_ViewingInstructions()
+    Public Sub LaunchGame()
         'Launch Game Form Based on Slots you Picked
         Select Case My.Settings.Slots
             Case 3
@@ -74,58 +91,6 @@ Public Class frmMSGBOX
         My.Settings.Save()
         DialogResult = DialogResult.OK
     End Sub
-    ' <<<<============= BtnCancel Events =============>>>>
-    Public Sub BtnCancel_ViewingInstructions()
-        My.Settings.ViewingInstructions = False
-        My.Settings.Save()
-        DialogResult = DialogResult.Cancel
-    End Sub
-
-    Public Sub BtnCancel_AskingForInstructions()
-        My.Settings.AskingForInstructions = False
-        My.Settings.Save()
-        DialogResult = DialogResult.Cancel
-    End Sub
-
-    ' <<<============= BtnCancel Events END =============>>>
-    '  <<<================ BtnYES Events ===============>>>
-    Public Sub BtnYES_AskingForInstructions() ' Event is Dual Dialog (No DialogResult until 2nd Dialog)
-        My.Settings.AskingForInstructions = False
-        My.Settings.ViewingInstructions = True
-        My.Settings.Save()
-    End Sub
-
-    Public Sub BtnYES_WantsToQuit()
-        ' Close the Game Form Currently Opened
-        My.Settings.WantsToQuit = False
-        My.Settings.Save()
-        DialogResult = DialogResult.Yes
-    End Sub
-
-    Public Sub BtnYES_WantsToRestart()
-        My.Settings.WantsToRestart = False
-        My.Settings.Save()
-        DialogResult = DialogResult.Yes
-    End Sub
-    '<<<=============== BtnYES Events END ===============>>>
-    ' <<<================ BtnNO Events =================>>>
-    Public Sub BtnNO_AskingForInstructions()
-        ' Launch this Event instead of Duplicating Code
-        BtnOK_ViewingInstructions()
-    End Sub
-
-    Public Sub BtnNO_WantsToQuit()
-        My.Settings.WantsToQuit = False
-        My.Settings.Save()
-        DialogResult = DialogResult.No
-    End Sub
-
-    Public Sub BtnNO_WantsToRestart()
-        My.Settings.WantsToRestart = False
-        My.Settings.Save()
-        DialogResult = DialogResult.No
-    End Sub
-    '<<<================ BtnNO Events END =================>>>
 
     Private Sub FrmMSGBOX_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         My.Settings.ViewingInstructions = False

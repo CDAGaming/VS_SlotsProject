@@ -47,54 +47,59 @@ Partial Class frmMSGBOX
         'lblMSG
         '
         Me.lblMSG.AutoSize = True
-        Me.lblMSG.Location = New System.Drawing.Point(148, 12)
+        Me.lblMSG.Location = New System.Drawing.Point(138, 12)
         Me.lblMSG.Name = "lblMSG"
-        Me.lblMSG.Size = New System.Drawing.Size(439, 46)
+        Me.lblMSG.Size = New System.Drawing.Size(447, 51)
         Me.lblMSG.TabIndex = 1
         Me.lblMSG.Text = "This is a Dynamic Messagebox. In here, other Forms Can" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " specify what text they w" &
     "ould want in here besides this."
+        Me.lblMSG.UseCompatibleTextRendering = True
         '
         'btnOK
         '
         Me.btnOK.Enabled = False
-        Me.btnOK.Location = New System.Drawing.Point(490, 176)
+        Me.btnOK.Location = New System.Drawing.Point(520, 206)
         Me.btnOK.Name = "btnOK"
         Me.btnOK.Size = New System.Drawing.Size(100, 35)
         Me.btnOK.TabIndex = 2
         Me.btnOK.Text = "OK"
+        Me.btnOK.UseCompatibleTextRendering = True
         Me.btnOK.UseVisualStyleBackColor = True
         Me.btnOK.Visible = False
         '
         'btnCancel
         '
         Me.btnCancel.Enabled = False
-        Me.btnCancel.Location = New System.Drawing.Point(12, 176)
+        Me.btnCancel.Location = New System.Drawing.Point(12, 206)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(100, 35)
         Me.btnCancel.TabIndex = 3
         Me.btnCancel.Text = "Cancel"
+        Me.btnCancel.UseCompatibleTextRendering = True
         Me.btnCancel.UseVisualStyleBackColor = True
         Me.btnCancel.Visible = False
         '
         'btnYES
         '
         Me.btnYES.Enabled = False
-        Me.btnYES.Location = New System.Drawing.Point(197, 176)
+        Me.btnYES.Location = New System.Drawing.Point(222, 206)
         Me.btnYES.Name = "btnYES"
         Me.btnYES.Size = New System.Drawing.Size(100, 35)
         Me.btnYES.TabIndex = 4
         Me.btnYES.Text = "Yes"
+        Me.btnYES.UseCompatibleTextRendering = True
         Me.btnYES.UseVisualStyleBackColor = True
         Me.btnYES.Visible = False
         '
         'btnNO
         '
         Me.btnNO.Enabled = False
-        Me.btnNO.Location = New System.Drawing.Point(303, 176)
+        Me.btnNO.Location = New System.Drawing.Point(328, 206)
         Me.btnNO.Name = "btnNO"
         Me.btnNO.Size = New System.Drawing.Size(100, 35)
         Me.btnNO.TabIndex = 5
         Me.btnNO.Text = "No"
+        Me.btnNO.UseCompatibleTextRendering = True
         Me.btnNO.UseVisualStyleBackColor = True
         Me.btnNO.Visible = False
         '
@@ -107,7 +112,7 @@ Partial Class frmMSGBOX
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 23.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(602, 223)
+        Me.ClientSize = New System.Drawing.Size(632, 253)
         Me.ControlBox = False
         Me.Controls.Add(Me.btnNO)
         Me.Controls.Add(Me.btnYES)

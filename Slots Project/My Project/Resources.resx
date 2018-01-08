@@ -1138,20 +1138,24 @@
 </value>
   </data>
   <data name="MSGInstructions" xml:space="preserve">
-    <value>Based on the Settings you have chosen, a number of Slots will appear.
-Your Goal is Simple: Try to land a Perfect Match on all slots
-a certain number of times to win!
+    <value>Based on the Settings you've chosen,
+a number of Slots will appear with a random set of numbers.
+
+Your Goal is Simple:
+Land a Perfect Match on all slots to win!
+Though Be Sure not to Run out of Lives, Or You Lose!
+
 
 When you are Ready, Click OK to Start with Current Settings.</value>
   </data>
   <data name="MSG_AskingInstructions" xml:space="preserve">
     <value>Would you like to view the Instructions before Starting?</value>
   </data>
-  <data name="TitleInstructions" xml:space="preserve">
-    <value>Instructions: How to Play</value>
+  <data name="Title_Instructions" xml:space="preserve">
+    <value>Instructions: How to Play!</value>
   </data>
   <data name="Title_AskingInstructions" xml:space="preserve">
-    <value>Slots: Ready to Begin</value>
+    <value>Slots: Ready to Begin?</value>
   </data>
   <data name="MSG_IsQuitting" xml:space="preserve">
     <value>Are you Sure you want to quit the Game?</value>
@@ -3067,5 +3071,16 @@ Would you like to Play this Game Again with the Same Settings?</value>
   <data name="MSGLastWins" xml:space="preserve">
     <value>You have Won 0 Times Last Time You Played!
 Try and Beat That!</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Montserrat_Regular" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Montserrat-Regular.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="MSG_OutOfLives" xml:space="preserve">
+    <value>You are Out Of Lives!
+Would you Like to Replay this Game?</value>
+  </data>
+  <data name="Title_OutOfLives" xml:space="preserve">
+    <value>Slots: Out Of Lives!</value>
   </data>
 </root>

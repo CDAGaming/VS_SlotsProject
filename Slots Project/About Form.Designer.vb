@@ -19,7 +19,6 @@ Partial Class FrmAbout
     Friend WithEvents LabelProductName As System.Windows.Forms.Label
     Friend WithEvents LabelVersion As System.Windows.Forms.Label
     Friend WithEvents LabelCompanyName As System.Windows.Forms.Label
-    Friend WithEvents TextBoxDescription As System.Windows.Forms.TextBox
     Friend WithEvents OKButton As System.Windows.Forms.Button
     Friend WithEvents LabelCopyright As System.Windows.Forms.Label
 
@@ -29,7 +28,7 @@ Partial Class FrmAbout
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmAbout))
         Me.TableLayoutPanel = New System.Windows.Forms.TableLayoutPanel()
@@ -38,8 +37,8 @@ Partial Class FrmAbout
         Me.LabelVersion = New System.Windows.Forms.Label()
         Me.LabelCopyright = New System.Windows.Forms.Label()
         Me.LabelCompanyName = New System.Windows.Forms.Label()
-        Me.TextBoxDescription = New System.Windows.Forms.TextBox()
         Me.OKButton = New System.Windows.Forms.Button()
+        Me.LabelDescription = New System.Windows.Forms.Label()
         Me.TableLayoutPanel.SuspendLayout()
         CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -54,8 +53,8 @@ Partial Class FrmAbout
         Me.TableLayoutPanel.Controls.Add(Me.LabelVersion, 1, 1)
         Me.TableLayoutPanel.Controls.Add(Me.LabelCopyright, 1, 2)
         Me.TableLayoutPanel.Controls.Add(Me.LabelCompanyName, 1, 3)
-        Me.TableLayoutPanel.Controls.Add(Me.TextBoxDescription, 1, 4)
         Me.TableLayoutPanel.Controls.Add(Me.OKButton, 1, 5)
+        Me.TableLayoutPanel.Controls.Add(Me.LabelDescription, 1, 4)
         Me.TableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel.Location = New System.Drawing.Point(14, 16)
         Me.TableLayoutPanel.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
@@ -67,6 +66,7 @@ Partial Class FrmAbout
         Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
         Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.TableLayoutPanel.Size = New System.Drawing.Size(593, 457)
         Me.TableLayoutPanel.TabIndex = 0
         '
@@ -94,6 +94,7 @@ Partial Class FrmAbout
         Me.LabelProductName.TabIndex = 0
         Me.LabelProductName.Text = "Product Name"
         Me.LabelProductName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.LabelProductName.UseCompatibleTextRendering = True
         '
         'LabelVersion
         '
@@ -106,6 +107,7 @@ Partial Class FrmAbout
         Me.LabelVersion.TabIndex = 0
         Me.LabelVersion.Text = "Version"
         Me.LabelVersion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.LabelVersion.UseCompatibleTextRendering = True
         '
         'LabelCopyright
         '
@@ -118,6 +120,7 @@ Partial Class FrmAbout
         Me.LabelCopyright.TabIndex = 0
         Me.LabelCopyright.Text = "Copyright"
         Me.LabelCopyright.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.LabelCopyright.UseCompatibleTextRendering = True
         '
         'LabelCompanyName
         '
@@ -130,20 +133,7 @@ Partial Class FrmAbout
         Me.LabelCompanyName.TabIndex = 0
         Me.LabelCompanyName.Text = "Company Name"
         Me.LabelCompanyName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'TextBoxDescription
-        '
-        Me.TextBoxDescription.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TextBoxDescription.Location = New System.Drawing.Point(204, 186)
-        Me.TextBoxDescription.Margin = New System.Windows.Forms.Padding(9, 6, 4, 6)
-        Me.TextBoxDescription.Multiline = True
-        Me.TextBoxDescription.Name = "TextBoxDescription"
-        Me.TextBoxDescription.ReadOnly = True
-        Me.TextBoxDescription.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.TextBoxDescription.Size = New System.Drawing.Size(385, 216)
-        Me.TextBoxDescription.TabIndex = 0
-        Me.TextBoxDescription.TabStop = False
-        Me.TextBoxDescription.Text = resources.GetString("TextBoxDescription.Text")
+        Me.LabelCompanyName.UseCompatibleTextRendering = True
         '
         'OKButton
         '
@@ -155,6 +145,17 @@ Partial Class FrmAbout
         Me.OKButton.Size = New System.Drawing.Size(112, 37)
         Me.OKButton.TabIndex = 0
         Me.OKButton.Text = "&OK"
+        Me.OKButton.UseCompatibleTextRendering = True
+        '
+        'LabelDescription
+        '
+        Me.LabelDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.LabelDescription.Location = New System.Drawing.Point(198, 180)
+        Me.LabelDescription.Name = "LabelDescription"
+        Me.LabelDescription.Size = New System.Drawing.Size(391, 228)
+        Me.LabelDescription.TabIndex = 1
+        Me.LabelDescription.Text = resources.GetString("LabelDescription.Text")
+        Me.LabelDescription.UseCompatibleTextRendering = True
         '
         'FrmAbout
         '
@@ -174,10 +175,10 @@ Partial Class FrmAbout
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "About"
         Me.TableLayoutPanel.ResumeLayout(False)
-        Me.TableLayoutPanel.PerformLayout()
         CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
+    Friend WithEvents LabelDescription As Label
 End Class

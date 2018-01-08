@@ -35,6 +35,7 @@ Partial Class FrmGame_3Slots
         Me.btnQuit = New System.Windows.Forms.Button()
         Me.tmrWinCheck = New System.Windows.Forms.Timer(Me.components)
         Me.lblWins = New System.Windows.Forms.Label()
+        Me.lblLives = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -74,9 +75,10 @@ Partial Class FrmGame_3Slots
         Me.lblNum1.ForeColor = System.Drawing.Color.Maroon
         Me.lblNum1.Location = New System.Drawing.Point(62, 87)
         Me.lblNum1.Name = "lblNum1"
-        Me.lblNum1.Size = New System.Drawing.Size(64, 75)
+        Me.lblNum1.Size = New System.Drawing.Size(54, 84)
         Me.lblNum1.TabIndex = 3
         Me.lblNum1.Text = "0"
+        Me.lblNum1.UseCompatibleTextRendering = True
         '
         'lblNum2
         '
@@ -85,9 +87,10 @@ Partial Class FrmGame_3Slots
         Me.lblNum2.ForeColor = System.Drawing.Color.Maroon
         Me.lblNum2.Location = New System.Drawing.Point(132, 87)
         Me.lblNum2.Name = "lblNum2"
-        Me.lblNum2.Size = New System.Drawing.Size(64, 75)
+        Me.lblNum2.Size = New System.Drawing.Size(54, 84)
         Me.lblNum2.TabIndex = 4
         Me.lblNum2.Text = "0"
+        Me.lblNum2.UseCompatibleTextRendering = True
         '
         'lblNum3
         '
@@ -96,9 +99,10 @@ Partial Class FrmGame_3Slots
         Me.lblNum3.ForeColor = System.Drawing.Color.Maroon
         Me.lblNum3.Location = New System.Drawing.Point(202, 87)
         Me.lblNum3.Name = "lblNum3"
-        Me.lblNum3.Size = New System.Drawing.Size(64, 75)
+        Me.lblNum3.Size = New System.Drawing.Size(54, 84)
         Me.lblNum3.TabIndex = 5
         Me.lblNum3.Text = "0"
+        Me.lblNum3.UseCompatibleTextRendering = True
         '
         'btnRoll
         '
@@ -107,6 +111,7 @@ Partial Class FrmGame_3Slots
         Me.btnRoll.Size = New System.Drawing.Size(102, 38)
         Me.btnRoll.TabIndex = 2
         Me.btnRoll.Text = "Roll"
+        Me.btnRoll.UseCompatibleTextRendering = True
         Me.btnRoll.UseVisualStyleBackColor = True
         '
         'btnQuit
@@ -117,6 +122,7 @@ Partial Class FrmGame_3Slots
         Me.btnQuit.Size = New System.Drawing.Size(102, 38)
         Me.btnQuit.TabIndex = 1
         Me.btnQuit.Text = "Quit"
+        Me.btnQuit.UseCompatibleTextRendering = True
         Me.btnQuit.UseVisualStyleBackColor = True
         '
         'tmrWinCheck
@@ -128,12 +134,25 @@ Partial Class FrmGame_3Slots
         '
         Me.lblWins.Font = New System.Drawing.Font("Impact", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblWins.ForeColor = System.Drawing.Color.Yellow
-        Me.lblWins.Location = New System.Drawing.Point(120, 337)
+        Me.lblWins.Location = New System.Drawing.Point(16, 296)
         Me.lblWins.Name = "lblWins"
         Me.lblWins.Size = New System.Drawing.Size(94, 64)
         Me.lblWins.TabIndex = 6
         Me.lblWins.Text = "Wins" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "00"
         Me.lblWins.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblWins.UseCompatibleTextRendering = True
+        '
+        'lblLives
+        '
+        Me.lblLives.Font = New System.Drawing.Font("Impact", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblLives.ForeColor = System.Drawing.Color.Yellow
+        Me.lblLives.Location = New System.Drawing.Point(224, 296)
+        Me.lblLives.Name = "lblLives"
+        Me.lblLives.Size = New System.Drawing.Size(94, 64)
+        Me.lblLives.TabIndex = 7
+        Me.lblLives.Text = "Lives" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "00"
+        Me.lblLives.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblLives.UseCompatibleTextRendering = True
         '
         'FrmGame_3Slots
         '
@@ -143,6 +162,7 @@ Partial Class FrmGame_3Slots
         Me.BackColor = System.Drawing.Color.Gray
         Me.CancelButton = Me.btnQuit
         Me.ClientSize = New System.Drawing.Size(334, 413)
+        Me.Controls.Add(Me.lblLives)
         Me.Controls.Add(Me.lblWins)
         Me.Controls.Add(Me.btnQuit)
         Me.Controls.Add(Me.btnRoll)
@@ -177,4 +197,5 @@ Partial Class FrmGame_3Slots
     Friend WithEvents btnQuit As Button
     Friend WithEvents tmrWinCheck As Timer
     Friend WithEvents lblWins As Label
+    Friend WithEvents lblLives As Label
 End Class

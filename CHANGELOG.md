@@ -1,5 +1,9 @@
 # Changelog
 
+## [v1.3.3](https://github.com/CDAGaming/VS_SlotsProject/tree/v1.3.3) (2018-01-03)
+
+[Full Changelog](https://github.com/CDAGaming/VS_SlotsProject/compare/v1.3.2.1...v1.3.3)
+
 ## [v1.3.2.1](https://github.com/CDAGaming/VS_SlotsProject/tree/v1.3.2.1) (2018-01-02)
 
 [Full Changelog](https://github.com/CDAGaming/VS_SlotsProject/compare/v1.3.2...v1.3.2.1)

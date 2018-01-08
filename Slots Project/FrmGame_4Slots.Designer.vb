@@ -35,6 +35,7 @@ Partial Class FrmGame_4Slots
         Me.lblNum1 = New System.Windows.Forms.Label()
         Me.lblNum4 = New System.Windows.Forms.Label()
         Me.tmrWinCheck = New System.Windows.Forms.Timer(Me.components)
+        Me.lblLives = New System.Windows.Forms.Label()
         Me.lblWins = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -76,6 +77,7 @@ Partial Class FrmGame_4Slots
         Me.btnQuit.Size = New System.Drawing.Size(102, 38)
         Me.btnQuit.TabIndex = 1
         Me.btnQuit.Text = "Quit"
+        Me.btnQuit.UseCompatibleTextRendering = True
         Me.btnQuit.UseVisualStyleBackColor = True
         '
         'btnRoll
@@ -85,6 +87,7 @@ Partial Class FrmGame_4Slots
         Me.btnRoll.Size = New System.Drawing.Size(102, 38)
         Me.btnRoll.TabIndex = 2
         Me.btnRoll.Text = "Roll"
+        Me.btnRoll.UseCompatibleTextRendering = True
         Me.btnRoll.UseVisualStyleBackColor = True
         '
         'lblNum3
@@ -94,9 +97,10 @@ Partial Class FrmGame_4Slots
         Me.lblNum3.ForeColor = System.Drawing.Color.Maroon
         Me.lblNum3.Location = New System.Drawing.Point(188, 87)
         Me.lblNum3.Name = "lblNum3"
-        Me.lblNum3.Size = New System.Drawing.Size(64, 75)
+        Me.lblNum3.Size = New System.Drawing.Size(54, 84)
         Me.lblNum3.TabIndex = 5
         Me.lblNum3.Text = "0"
+        Me.lblNum3.UseCompatibleTextRendering = True
         '
         'lblNum2
         '
@@ -105,9 +109,10 @@ Partial Class FrmGame_4Slots
         Me.lblNum2.ForeColor = System.Drawing.Color.Maroon
         Me.lblNum2.Location = New System.Drawing.Point(82, 87)
         Me.lblNum2.Name = "lblNum2"
-        Me.lblNum2.Size = New System.Drawing.Size(64, 75)
+        Me.lblNum2.Size = New System.Drawing.Size(54, 84)
         Me.lblNum2.TabIndex = 4
         Me.lblNum2.Text = "0"
+        Me.lblNum2.UseCompatibleTextRendering = True
         '
         'lblNum1
         '
@@ -116,9 +121,10 @@ Partial Class FrmGame_4Slots
         Me.lblNum1.ForeColor = System.Drawing.Color.Maroon
         Me.lblNum1.Location = New System.Drawing.Point(12, 87)
         Me.lblNum1.Name = "lblNum1"
-        Me.lblNum1.Size = New System.Drawing.Size(64, 75)
+        Me.lblNum1.Size = New System.Drawing.Size(54, 84)
         Me.lblNum1.TabIndex = 3
         Me.lblNum1.Text = "0"
+        Me.lblNum1.UseCompatibleTextRendering = True
         '
         'lblNum4
         '
@@ -127,25 +133,39 @@ Partial Class FrmGame_4Slots
         Me.lblNum4.ForeColor = System.Drawing.Color.Maroon
         Me.lblNum4.Location = New System.Drawing.Point(258, 87)
         Me.lblNum4.Name = "lblNum4"
-        Me.lblNum4.Size = New System.Drawing.Size(64, 75)
+        Me.lblNum4.Size = New System.Drawing.Size(54, 84)
         Me.lblNum4.TabIndex = 6
         Me.lblNum4.Text = "0"
+        Me.lblNum4.UseCompatibleTextRendering = True
         '
         'tmrWinCheck
         '
         Me.tmrWinCheck.Enabled = True
         Me.tmrWinCheck.Interval = 10
         '
+        'lblLives
+        '
+        Me.lblLives.Font = New System.Drawing.Font("Impact", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblLives.ForeColor = System.Drawing.Color.Yellow
+        Me.lblLives.Location = New System.Drawing.Point(224, 296)
+        Me.lblLives.Name = "lblLives"
+        Me.lblLives.Size = New System.Drawing.Size(94, 64)
+        Me.lblLives.TabIndex = 8
+        Me.lblLives.Text = "Lives" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "00"
+        Me.lblLives.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblLives.UseCompatibleTextRendering = True
+        '
         'lblWins
         '
         Me.lblWins.Font = New System.Drawing.Font("Impact", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblWins.ForeColor = System.Drawing.Color.Yellow
-        Me.lblWins.Location = New System.Drawing.Point(120, 340)
+        Me.lblWins.Location = New System.Drawing.Point(16, 296)
         Me.lblWins.Name = "lblWins"
         Me.lblWins.Size = New System.Drawing.Size(94, 64)
         Me.lblWins.TabIndex = 7
         Me.lblWins.Text = "Wins" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "00"
         Me.lblWins.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblWins.UseCompatibleTextRendering = True
         '
         'FrmGame_4Slots
         '
@@ -155,6 +175,7 @@ Partial Class FrmGame_4Slots
         Me.BackColor = System.Drawing.Color.Gray
         Me.CancelButton = Me.btnQuit
         Me.ClientSize = New System.Drawing.Size(334, 413)
+        Me.Controls.Add(Me.lblLives)
         Me.Controls.Add(Me.lblWins)
         Me.Controls.Add(Me.lblNum4)
         Me.Controls.Add(Me.btnQuit)
@@ -190,5 +211,6 @@ Partial Class FrmGame_4Slots
     Friend WithEvents lblNum1 As Label
     Friend WithEvents lblNum4 As Label
     Friend WithEvents tmrWinCheck As Timer
+    Friend WithEvents lblLives As Label
     Friend WithEvents lblWins As Label
 End Class

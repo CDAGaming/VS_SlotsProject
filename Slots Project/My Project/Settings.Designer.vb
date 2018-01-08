@@ -149,6 +149,30 @@ Namespace My
                 Me("LastWins") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("20")>  _
+        Public Property Lives() As Integer
+            Get
+                Return CType(Me("Lives"),Integer)
+            End Get
+            Set
+                Me("Lives") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property OutOfLives() As Boolean
+            Get
+                Return CType(Me("OutOfLives"),Boolean)
+            End Get
+            Set
+                Me("OutOfLives") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

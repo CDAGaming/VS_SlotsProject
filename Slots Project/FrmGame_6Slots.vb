@@ -14,10 +14,13 @@ Public Class FrmGame_6Slots
     Dim intNum4 As Integer
     Dim intNum5 As Integer
     Dim intNum6 As Integer
-
+    Dim OriginalLifeCount As Integer
+    Dim FontCollection As New Text.PrivateFontCollection()
+    Dim fontMemPointer As IntPtr
+    Dim AboutForm As FrmAbout = New FrmAbout()
+    Dim MSGBoxForm As frmMSGBOX = New frmMSGBOX()
     Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
-        Dim oForm As FrmAbout = New FrmAbout()
-        oForm.ShowDialog()
+        AboutForm.ShowDialog()
     End Sub
 
     Private Sub BtnQuit_Click(sender As Object, e As EventArgs) Handles btnQuit.Click
@@ -26,10 +29,7 @@ Public Class FrmGame_6Slots
 
     Public Sub IsQuitting()
         My.Settings.WantsToQuit = True
-        My.Settings.Save()
-
-        Dim oForm As frmMSGBOX = New frmMSGBOX()
-        If oForm.ShowDialog() = DialogResult.Yes Then
+        If MSGBoxForm.ShowDialog() = DialogResult.Yes Then
             Close()
         End If
     End Sub
@@ -50,26 +50,23 @@ Public Class FrmGame_6Slots
             lblNum4.ForeColor = Color.Green
             lblNum5.ForeColor = Color.Green
             lblNum6.ForeColor = Color.Green
-
             tmrWinCheck.Stop()
             btnRoll.Enabled = False
             My.Settings.Wins += 1
-            My.Settings.WantsToRestart = True
-            My.Settings.Save()
             lblWins.Text = "Wins" & ControlChars.NewLine & My.Settings.Wins.ToString()
 
-            Dim oForm As frmMSGBOX = New frmMSGBOX()
-            If oForm.ShowDialog() = DialogResult.Yes Then
-                RollNumbers()
-                tmrWinCheck.Start()
-                btnRoll.Enabled = True
-            Else
-                My.Settings.WantsToRestart = False
-                My.Settings.LastWins = My.Settings.Wins
-                Threading.Thread.Sleep(1) 'Ensures Thread does the Lines above before continuing
-                My.Settings.Wins = 0
-                My.Settings.Save()
-                Close()
+            If My.Settings.Lives > 0 Then
+                My.Settings.WantsToRestart = True
+                If MSGBoxForm.ShowDialog() = DialogResult.Yes Then
+                    RollNumbers()
+                    tmrWinCheck.Start()
+                    btnRoll.Enabled = True
+                Else
+                    My.Settings.LastWins = My.Settings.Wins
+                    Threading.Thread.Sleep(1) 'Ensures Thread does the Lines above before continuing
+                    My.Settings.Wins = 0
+                    Close()
+                End If
             End If
         Else
             lblNum1.ForeColor = Color.Maroon
@@ -79,9 +76,46 @@ Public Class FrmGame_6Slots
             lblNum5.ForeColor = Color.Maroon
             lblNum6.ForeColor = Color.Maroon
         End If
+        If My.Settings.Lives = 0 Then
+            tmrWinCheck.Stop()
+            btnRoll.Enabled = False
+            My.Settings.OutOfLives = True
+            If MSGBoxForm.ShowDialog() = DialogResult.Yes Then
+                My.Settings.Lives = OriginalLifeCount
+                RollNumbers()
+                tmrWinCheck.Start()
+                btnRoll.Enabled = True
+            Else
+                My.Settings.LastWins = My.Settings.Wins
+                Threading.Thread.Sleep(1) 'Ensures Thread does the Lines above before continuing
+                My.Settings.Wins = 0
+                Close()
+            End If
+        End If
+        My.Settings.Save()
     End Sub
 
     Private Sub FrmGame_6Slots_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' Load Custom Font Files
+        fontMemPointer = Runtime.InteropServices.Marshal.AllocCoTaskMem(My.Resources.Montserrat_Regular.Length)
+        Runtime.InteropServices.Marshal.Copy(My.Resources.Montserrat_Regular, 0, fontMemPointer, My.Resources.Montserrat_Regular.Length)
+        FontCollection.AddMemoryFont(fontMemPointer, My.Resources.Montserrat_Regular.Length)
+        Runtime.InteropServices.Marshal.FreeCoTaskMem(fontMemPointer)
+
+        lblNum1.Font = New Font(FontCollection.Families(0), 36, FontStyle.Regular)
+        lblNum2.Font = New Font(FontCollection.Families(0), 36, FontStyle.Regular)
+        lblNum3.Font = New Font(FontCollection.Families(0), 36, FontStyle.Regular)
+        lblNum4.Font = New Font(FontCollection.Families(0), 36, FontStyle.Regular)
+        lblNum5.Font = New Font(FontCollection.Families(0), 36, FontStyle.Regular)
+        lblNum6.Font = New Font(FontCollection.Families(0), 36, FontStyle.Regular)
+        lblWins.Font = New Font(FontCollection.Families(0), 18, FontStyle.Regular)
+        lblLives.Font = New Font(FontCollection.Families(0), 18, FontStyle.Regular)
+        btnRoll.Font = New Font(FontCollection.Families(0), 12, FontStyle.Regular)
+        btnQuit.Font = New Font(FontCollection.Families(0), 12, FontStyle.Regular)
+        ' Perform Initial Setup (Lives Storage + 1st Roll)
+        My.Settings.Lives += 1
+        OriginalLifeCount = My.Settings.Lives
+        Threading.Thread.Sleep(1) 'Ensures Thread does the Line above before continuing
         RollNumbers()
     End Sub
 
@@ -92,12 +126,19 @@ Public Class FrmGame_6Slots
         intNum4 = randGen.Next(1, My.Settings.RandomNumbers + 1)
         intNum5 = randGen.Next(1, My.Settings.RandomNumbers + 1)
         intNum6 = randGen.Next(1, My.Settings.RandomNumbers + 1)
-
         lblNum1.Text = intNum1.ToString()
         lblNum2.Text = intNum2.ToString()
         lblNum3.Text = intNum3.ToString()
         lblNum4.Text = intNum4.ToString()
         lblNum5.Text = intNum5.ToString()
         lblNum6.Text = intNum6.ToString()
+
+        My.Settings.Lives -= 1
+        My.Settings.Save()
+        lblLives.Text = "Lives" & ControlChars.NewLine & My.Settings.Lives.ToString()
+    End Sub
+
+    Private Sub FrmGame_6Slots_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        My.Settings.Save()
     End Sub
 End Class

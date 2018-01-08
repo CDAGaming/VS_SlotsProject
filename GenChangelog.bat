@@ -24,4 +24,4 @@ If /I "%INPUT%"=="N" goto Start
 echo Incorrect Input, Input is Case-Sensitive! & goto Start
 
 :Generate
-github_changelog_generator -u %USER% -p %REPOSITORY% --token %TOKEN%
+github_changelog_generator --user %USER% --project %REPOSITORY% --token %TOKEN%

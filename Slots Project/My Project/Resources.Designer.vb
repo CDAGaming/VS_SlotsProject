@@ -81,6 +81,16 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized resource of type System.Byte[].
+        '''</summary>
+        Friend ReadOnly Property Montserrat_Regular() As Byte()
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Montserrat_Regular", resourceCulture)
+                Return CType(obj,Byte())
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Would you like to view the Instructions before Starting?.
         '''</summary>
         Friend ReadOnly Property MSG_AskingInstructions() As String
@@ -105,6 +115,16 @@ Namespace My.Resources
         Friend ReadOnly Property MSG_IsRestarting() As String
             Get
                 Return ResourceManager.GetString("MSG_IsRestarting", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to You are Out Of Lives!
+        '''Would you Like to Replay this Game?.
+        '''</summary>
+        Friend ReadOnly Property MSG_OutOfLives() As String
+            Get
+                Return ResourceManager.GetString("MSG_OutOfLives", resourceCulture)
             End Get
         End Property
         
@@ -139,9 +159,13 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Based on the Settings you have chosen, a number of Slots will appear.
-        '''Your Goal is Simple: Try to land a Perfect Match on all slots
-        '''a certain number of times to win!
+        '''  Looks up a localized string similar to Based on the Settings you&apos;ve chosen,
+        '''a number of Slots will appear with a random set of numbers.
+        '''
+        '''Your Goal is Simple:
+        '''Land a Perfect Match on all slots to win!
+        '''Though Be Sure not to Run out of Lives, Or You Lose!
+        '''
         '''
         '''When you are Ready, Click OK to Start with Current Settings..
         '''</summary>
@@ -162,11 +186,20 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Slots: Ready to Begin.
+        '''  Looks up a localized string similar to Slots: Ready to Begin?.
         '''</summary>
         Friend ReadOnly Property Title_AskingInstructions() As String
             Get
                 Return ResourceManager.GetString("Title_AskingInstructions", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Instructions: How to Play!.
+        '''</summary>
+        Friend ReadOnly Property Title_Instructions() As String
+            Get
+                Return ResourceManager.GetString("Title_Instructions", resourceCulture)
             End Get
         End Property
         
@@ -189,11 +222,11 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Instructions: How to Play.
+        '''  Looks up a localized string similar to Slots: Out Of Lives!.
         '''</summary>
-        Friend ReadOnly Property TitleInstructions() As String
+        Friend ReadOnly Property Title_OutOfLives() As String
             Get
-                Return ResourceManager.GetString("TitleInstructions", resourceCulture)
+                Return ResourceManager.GetString("Title_OutOfLives", resourceCulture)
             End Get
         End Property
     End Module

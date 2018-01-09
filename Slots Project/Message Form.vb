@@ -5,11 +5,9 @@
 Option Explicit On
 Option Strict On
 Option Infer Off
-Imports System.Drawing.Text
-Imports System.Runtime.InteropServices
 
 Public Class frmMSGBOX
-    Dim FontCollection As New PrivateFontCollection()
+    Dim FontCollection As New Text.PrivateFontCollection()
     Dim fontMemPointer As IntPtr
     ' <<<<============= Button MAIN Events =============>>>>
     Private Sub BtnOK_Click(sender As Object, e As System.EventArgs) Handles btnOK.Click
@@ -170,10 +168,10 @@ Public Class frmMSGBOX
 
     Private Sub FrmMSGBOX_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Load Custom Font Files
-        fontMemPointer = Marshal.AllocCoTaskMem(My.Resources.Montserrat_Regular.Length)
-        Marshal.Copy(My.Resources.Montserrat_Regular, 0, fontMemPointer, My.Resources.Montserrat_Regular.Length)
+        fontMemPointer = Runtime.InteropServices.Marshal.AllocCoTaskMem(My.Resources.Montserrat_Regular.Length)
+        Runtime.InteropServices.Marshal.Copy(My.Resources.Montserrat_Regular, 0, fontMemPointer, My.Resources.Montserrat_Regular.Length)
         FontCollection.AddMemoryFont(fontMemPointer, My.Resources.Montserrat_Regular.Length)
-        Marshal.FreeCoTaskMem(fontMemPointer)
+        Runtime.InteropServices.Marshal.FreeCoTaskMem(fontMemPointer)
 
         lblMSG.Font = New Font(FontCollection.Families(0), 10, FontStyle.Regular)
         btnCancel.Font = New Font(FontCollection.Families(0), 10, FontStyle.Regular)

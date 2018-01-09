@@ -5,20 +5,18 @@
 Option Explicit On
 Option Strict On
 Option Infer Off
-Imports System.Drawing.Text
-Imports System.Runtime.InteropServices
 
 Public NotInheritable Class FrmAbout
-    Dim FontCollection As New PrivateFontCollection()
+    Dim FontCollection As New Text.PrivateFontCollection()
     Dim fontMemPointer As IntPtr
     Dim ApplicationTitle As String
     Dim ApplicationVersion As String
     Private Sub About_Form_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         ' Load Custom Font Files
-        fontMemPointer = Marshal.AllocCoTaskMem(My.Resources.Montserrat_Regular.Length)
-        Marshal.Copy(My.Resources.Montserrat_Regular, 0, fontMemPointer, My.Resources.Montserrat_Regular.Length)
+        fontMemPointer = Runtime.InteropServices.Marshal.AllocCoTaskMem(My.Resources.Montserrat_Regular.Length)
+        Runtime.InteropServices.Marshal.Copy(My.Resources.Montserrat_Regular, 0, fontMemPointer, My.Resources.Montserrat_Regular.Length)
         FontCollection.AddMemoryFont(fontMemPointer, My.Resources.Montserrat_Regular.Length)
-        Marshal.FreeCoTaskMem(fontMemPointer)
+        Runtime.InteropServices.Marshal.FreeCoTaskMem(fontMemPointer)
 
         LabelCompanyName.Font = New Font(FontCollection.Families(0), 10, FontStyle.Regular)
         LabelCopyright.Font = New Font(FontCollection.Families(0), 10, FontStyle.Regular)
